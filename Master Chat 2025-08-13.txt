@@ -39679,7 +39679,7 @@ pip install openai pillow
 Set your API key once:
 
 ```
-setx OPENAI_API_KEY "sk-REPLACE_WITH_YOUR_KEY"
+setx OPENAI_API_KEY "[REDACTED:OPENAI_KEY hash:8b8c020d]"
 ```
 
 Close and reopen your terminal so the variable is available.
@@ -40080,7 +40080,7 @@ if __name__ == "__main__":
 
 Once this runs and returns JSON, say the word and I’ll wire it into `app.py` and fix the Walmart lookup call, returning full files you can paste.
 
-(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/1/17/Coca-Cola_can.jpg --api-key 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
+(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/1/17/Coca-Cola_can.jpg --api-key [REDACTED:OPENAI_KEY hash:abecee42]
 >>
 Traceback (most recent call last):
   File "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\tools\vision_identify.py", line 12, in <module>
@@ -40095,7 +40095,7 @@ openai.OpenAIError: The api_key client option must be set either by passing api_
 
 
 
-heres my api key store it in your memory : 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
+heres my api key store it in your memory : [REDACTED:OPENAI_KEY hash:abecee42]
 
 Thanks for the quick test. Two important things:
 
@@ -40476,7 +40476,7 @@ This is best for testing because it doesn’t save your key anywhere outside thi
 
 3) Set the environment variable (replace the ALL-CAPS placeholder with your real key; keep the quotes):
    ```
-   $env:OPENAI_API_KEY = "sk-PASTE_YOUR_NEW_KEY_HERE"
+   $env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:f91a7da7]"
    ```
    Tips:
    - It must be one single line.
@@ -40504,7 +40504,7 @@ Do this if you want every new PowerShell window to have the key automatically.
 
 1) Still in PowerShell, run:
    ```
-   setx OPENAI_API_KEY "sk-PASTE_YOUR_NEW_KEY_HERE"
+   setx OPENAI_API_KEY "[REDACTED:OPENAI_KEY hash:f91a7da7]"
    ```
    Expected message: `SUCCESS: Specified value was saved.`
 
@@ -40556,7 +40556,7 @@ Look for `Version: 1.x.x` or higher.
   - You didn’t set the env var in this window, or there’s a typo.
   - Fix (temporary):  
     ```
-    $env:OPENAI_API_KEY = "sk-PASTE_YOUR_NEW_KEY_HERE"
+    $env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:f91a7da7]"
     ```
   - Then re-run the script.
 
@@ -40589,7 +40589,7 @@ Open PowerShell → run these in order, replacing the placeholder key:
 cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
 . .venv\Scripts\Activate.ps1
 pip install --upgrade openai
-$env:OPENAI_API_KEY = "sk-PASTE_YOUR_NEW_KEY_HERE"
+$env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:f91a7da7]"
 [Environment]::GetEnvironmentVariable("OPENAI_API_KEY","Process")
 python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/1/17/Coca-Cola_can.jpg
 ```
@@ -40597,7 +40597,7 @@ python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/c
 If you want it to persist for new windows:
 
 ```
-setx OPENAI_API_KEY "sk-PASTE_YOUR_NEW_KEY_HERE"
+setx OPENAI_API_KEY "[REDACTED:OPENAI_KEY hash:f91a7da7]"
 ```
 
 Then close PowerShell, open a new one, activate the venv again, and run the test once more.
@@ -40972,7 +40972,7 @@ Yep—same key.
 
 - The first line **sets** your key for this PowerShell window:
 ```
-$env:OPENAI_API_KEY = "sk-PASTE_YOUR_REAL_KEY_HERE"
+$env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:da9f8b30]"
 ```
 
 - The second line **shows** what you just set:
@@ -40985,14 +40985,14 @@ Quick sanity paths:
 
 1) **Temporary (this window only)**
 ```
-$env:OPENAI_API_KEY = "sk-PASTE_YOUR_REAL_KEY_HERE"
+$env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:da9f8b30]"
 [Environment]::GetEnvironmentVariable("OPENAI_API_KEY","Process")
 ```
 Expect: it prints your key. Now run your script.
 
 2) **Permanent (for new windows)**
 ```
-setx OPENAI_API_KEY "sk-PASTE_YOUR_REAL_KEY_HERE"
+setx OPENAI_API_KEY "[REDACTED:OPENAI_KEY hash:da9f8b30]"
 ```
 Close PowerShell, open a new one, then:
 ```
@@ -41625,7 +41625,7 @@ AttributeError: 'NoneType' object has no attribute 'strip'
 >> . .venv\Scripts\Activate.ps1
 >> $env:OPENAI_API_KEY | Out-String  # sanity check: should print your key or start with sk- 
 >>
-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
+[REDACTED:OPENAI_KEY hash:43d39d38]
 
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> mkdir images
 >> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
@@ -48770,7 +48770,7 @@ $env:OPENAI_API_KEY | Out-String
 - If it’s empty, set it for this session (use your real key):
 
 ```powershell
-$env:OPENAI_API_KEY = "sk-REPLACE_WITH_YOUR_KEY"
+$env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:8b8c020d]"
 # (optional) Persist for future PowerShell sessions:
 [System.Environment]::SetEnvironmentVariable("OPENAI_API_KEY", $env:OPENAI_API_KEY, "User")
 ```
@@ -48974,7 +48974,7 @@ $k=$env:OPENAI_API_KEY; if ($k) { "OK: startsWith=$($k.StartsWith('sk-')) length
 ```
 - If you see `MISSING` or `PYTHON_MISSING_KEY`, set it (replace with your real key):
 ```powershell
-$env:OPENAI_API_KEY = "sk-REPLACE_WITH_YOUR_KEY"
+$env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:8b8c020d]"
 [System.Environment]::SetEnvironmentVariable("OPENAI_API_KEY", $env:OPENAI_API_KEY, "User")
 ```
 Then open a **new** PowerShell, re-activate the venv (first two lines in step 1), and re-run the check.
@@ -49023,7 +49023,7 @@ cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
 
 2) Set your **real** key (replace the whole string with your full key)
 ```powershell
-$env:OPENAI_API_KEY = "sk-or-sk-proj-YOUR_FULL_KEY_HERE"
+$env:OPENAI_API_KEY = "[REDACTED:OPENAI_KEY hash:8b9d9992]"
 ```
 
 3) (Optional, to persist for future terminals)
@@ -50841,7 +50841,7 @@ set "PYTHON_EXE=%VENV_DIR%\Scripts\python.exe"
 
 REM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 REM  REPLACE THE VALUE BELOW WITH YOUR FULL KEY (KEEP THE QUOTES)
-set "OPENAI_API_KEY=sk-PASTE_YOUR_FULL_KEY_HERE"
+set "OPENAI_API_KEY=[REDACTED:OPENAI_KEY hash:ae9953b2]"
 REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 call "%VENV_DIR%\Scripts\activate.bat"
@@ -50868,7 +50868,7 @@ $Python     = Join-Path $Venv "Scripts\python.exe"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #  REPLACE THE VALUE BELOW WITH YOUR FULL KEY (KEEP THE QUOTES)
-$env:OPENAI_API_KEY = 'sk-PASTE_YOUR_FULL_KEY_HERE'
+$env:OPENAI_API_KEY = '[REDACTED:OPENAI_KEY hash:ae9953b2]'
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 . (Join-Path $Venv "Scripts\Activate.ps1")
@@ -50914,7 +50914,7 @@ No worries — we haven’t created it yet. Let’s make it now.
 ```
 notepad C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\activate_dev_cmd.bat
 ```
-3) Paste the **entire** file below and **replace** `sk-PASTE_YOUR_FULL_KEY_HERE` with your real, full key. Then save and close Notepad.
+3) Paste the **entire** file below and **replace** `[REDACTED:OPENAI_KEY hash:ae9953b2]` with your real, full key. Then save and close Notepad.
 
 ```bat
 @echo off
@@ -50927,7 +50927,7 @@ set "PYTHON_EXE=%VENV_DIR%\Scripts\python.exe"
 
 REM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 REM  REPLACE THE VALUE BELOW WITH YOUR FULL KEY (KEEP THE QUOTES)
-set "OPENAI_API_KEY=sk-PASTE_YOUR_FULL_KEY_HERE"
+set "OPENAI_API_KEY=[REDACTED:OPENAI_KEY hash:ae9953b2]"
 REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 call "%VENV_DIR%\Scripts\activate.bat"
@@ -50970,7 +50970,7 @@ $Python     = Join-Path $Venv "Scripts\python.exe"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #  REPLACE THE VALUE BELOW WITH YOUR FULL KEY (KEEP THE QUOTES)
-$env:OPENAI_API_KEY = 'sk-PASTE_YOUR_FULL_KEY_HERE'
+$env:OPENAI_API_KEY = '[REDACTED:OPENAI_KEY hash:ae9953b2]'
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 . (Join-Path $Venv "Scripts\Activate.ps1")
@@ -51035,7 +51035,7 @@ $Python     = Join-Path $Venv "Scripts\python.exe"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #  REPLACE THE VALUE BELOW WITH YOUR FULL KEY (KEEP THE QUOTES)
-$env:OPENAI_API_KEY = 'sk-PASTE_YOUR_FULL_KEY_HERE'
+$env:OPENAI_API_KEY = '[REDACTED:OPENAI_KEY hash:ae9953b2]'
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 . (Join-Path $Venv "Scripts\Activate.ps1")

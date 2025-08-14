@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "OPENAI_KEY": 21
+  },
+  "sample_hashes": {
+    "OPENAI_KEY": [
+      "8b8c020d",
+      "abecee42",
+      "abecee42"
+    ]
+  }
+}
