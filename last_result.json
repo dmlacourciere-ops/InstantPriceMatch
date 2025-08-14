@@ -1,21 +1,12 @@
 {
   "input": {
-    "image": "C:\\Users\\dmlac\\AppData\\Local\\Temp\\tmpsuu3u7me.jpg",
+    "image": null,
     "upc": null,
-    "name": "Cheez-It Baked Snack Crackers Extra Cheesy",
-    "country": "CA",
-    "dev_camera": true
+    "name": "bic ballpoint pen",
+    "country": "US",
+    "dev_camera": false
   },
-  "vision": {
-    "brand": "Cheez-It",
-    "name": "Baked Snack Crackers",
-    "variant": "Extra Cheesy",
-    "size_text": "",
-    "possible_upc": "",
-    "confidence": 0.0,
-    "notes": "Image is slightly tilted, but text is clear.",
-    "strategy": "vision"
-  },
+  "vision": null,
   "walmart": {
     "count": 0,
     "cheapest": null,
