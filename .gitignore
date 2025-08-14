@@ -1,0 +1,15 @@
+# Ignore EVERYTHING by default
+*
+
+# Allow folders so we can descend into them
+!*/
+
+# Allow only source / text files
+!*.py
+!*.md
+!*.json
+!*.ps1
+!*.bat
+!requirements.txt
+!.gitignore
+!.gitattributes

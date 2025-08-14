@@ -1,0 +1,50 @@
+{
+  "walmart": {
+    "cashier_note": "Match identical item (brand, size, model). Verify current price on a Canadian retailer. Must be in stock at the competitor.",
+    "bullets": [
+      "Identical item and size/variant.",
+      "Competing offer must be current and verifiable online.",
+      "Local Canadian retailers only; marketplace sellers usually excluded."
+    ]
+  },
+  "bestbuy": {
+    "cashier_note": "Match advertised price for identical model from a major Canadian retailer; exclude marketplace sellers.",
+    "bullets": [
+      "Identical model/SKU.",
+      "Canadian retailer with the item in stock.",
+      "Excludes third-party marketplace and clearance anomalies."
+    ]
+  },
+  "homedepot": {
+    "cashier_note": "Match identical item; verify price and availability from Canadian competitors.",
+    "bullets": [
+      "Identical brand and model.",
+      "Offer must be current and available for purchase.",
+      "Proof required: show the live web page or flyer."
+    ]
+  },
+  "loblaws": {
+    "cashier_note": "Grocery match typically requires identical item and active flyer/online price; check store manager guidance.",
+    "bullets": [
+      "Identical item and size.",
+      "Current flyer or online price within valid dates.",
+      "Item available locally."
+    ]
+  },
+  "nofrills": {
+    "cashier_note": "Policy varies by location; show competitor flyer with valid dates for the identical item.",
+    "bullets": [
+      "Bring competitor flyer or URL.",
+      "Valid during flyer dates only.",
+      "Exclusions may apply; ask customer service."
+    ]
+  },
+  "rcss": {
+    "cashier_note": "Verify identical item and flyer dates for Real Canadian Superstore price match.",
+    "bullets": [
+      "Identical item/size.",
+      "Show current flyer or online listing.",
+      "Local competitors only."
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+opencv-python
+pyzbar
+Pillow
+pandas
+python-dateutil
+requests
+beautifulsoup4
+lxml
+rapidfuzz
+playwright
+tqdm

@@ -1,0 +1,22 @@
+{
+  "postal_code": "N6C 1E7",
+  "preferred_stores": [
+    "Walmart",
+    "Real Canadian Superstore",
+    "No Frills",
+    "FreshCo",
+    "Metro",
+    "Sobeys",
+    "Loblaws",
+    "Food Basics",
+    "Giant Tiger",
+    "Shoppers Drug Mart",
+    "Your Independent Grocer"
+  ],
+  "auto_copy_url": true,
+  "auto_open_browser": true,
+  "camera_source": "http://10.0.0.187:4747/video",
+  "camera_index": 0,
+  "auto_proof_after_best_match": true,
+  "min_keyword_hits": 2
+}
