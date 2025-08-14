@@ -29,3 +29,6 @@
 # Allow chat logs in repo
 !docs/chat-logs/
 !docs/chat-logs/*.txt
+
+.env
+
