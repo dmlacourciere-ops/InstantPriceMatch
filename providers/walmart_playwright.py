@@ -170,7 +170,7 @@ def _first_product_from_search(page: Page, query: str) -> Optional[Dict]:
 
 def _new_context(pw) -> BrowserContext:
     browser = pw.chromium.launch(
-        headless=True,
+        headless=False,
         args=[
             "--disable-blink-features=AutomationControlled",
             "--no-sandbox",
@@ -266,3 +266,39 @@ def lookup_by_upc_or_name(upc=None, name=None):
             # Network/parse error etc—try next
             continue
     return []
+# ---- simple public wrapper: UPC/EAN -> list[offer] ----
+# Offer shape: {"store": "Walmart", "price": float, "currency": "CAD"/"USD", "url": str, "title": str}
+def get_offers_by_upc(upc: str, country: str = "CA"):
+    """
+    Minimal wrapper around walmart_lookup_playwright that normalizes the output
+    into a list of offers our app expects. Currently optimized for Walmart Canada.
+    """
+    if not upc:
+        return []
+
+    # Normalize UPC as a string; callers sometimes pass short codes without leading zeros.
+    upc_str = str(upc).strip()
+
+    try:
+        # Reuse your existing page-scraper (Canada-focused)
+        item = walmart_lookup_playwright(upc_str)
+    except Exception:
+        item = None
+
+    if not item:
+        return []
+
+    # item is like {"name": str, "price": float, "url": str}
+    try:
+        price = float(item.get("price"))
+    except Exception:
+        return []
+
+    offer = {
+        "store": "Walmart",
+        "price": price,
+        "currency": "CAD" if str(country).upper() == "CA" else "USD",
+        "url": item.get("url") or "",
+        "title": item.get("name") or f"UPC {upc_str}",
+    }
+    return [offer]

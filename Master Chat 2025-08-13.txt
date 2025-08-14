@@ -555,21 +555,21 @@ Create three CSV files in `InstantPriceMatch/data/retailers/` so you can test im
 ## `walmart_ca.csv`
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-062911123456,Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/062911123456,2025-08-08,Walmart Canada
-060383849789,WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/060383849789,2025-08-08,Walmart Canada
+[REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Walmart Canada
+[REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Walmart Canada
 ```
 
 ## `bestbuy_ca.csv`
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-060383849789,WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/060383849789,2025-08-08,Best Buy Canada
-062911123456,Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/062911123456,2025-08-08,Best Buy Canada
+[REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Best Buy Canada
+[REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Best Buy Canada
 ```
 
 ## `homedepot_ca.csv`
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-062911123456,Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/062911123456,2025-08-08,Home Depot Canada
+[REDACTED:PHONE 06••••••••56],Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Home Depot Canada
 ```
 
 > These fake barcodes are examples. You’ll scan/type the same numbers to see the app find the cheapest price.
@@ -869,8 +869,8 @@ python app.py
 ```
 
 - Choose **2) Enter barcode manually** for your first test.
-- Try `060383849789` (the SSD) → it should list Best Buy as cheapest in our sample.
-- Try `062911123456` (paper towels) → it should list Walmart cheapest in our sample.
+- Try `[REDACTED:PHONE 06••••••••89]` (the SSD) → it should list Best Buy as cheapest in our sample.
+- Try `[REDACTED:PHONE 06••••••••56]` (paper towels) → it should list Walmart cheapest in our sample.
 - A **proof PNG** will be saved in the `proofs/` folder, ready to show a cashier.
 
 ---
@@ -1199,23 +1199,23 @@ InstantPriceMatch/
   Paste, save:
   ```
   barcode,product_name,price_cad,url,last_updated,retailer
-  062911123456,Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/062911123456,2025-08-08,Walmart Canada
-  060383849789,WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/060383849789,2025-08-08,Walmart Canada
+  [REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Walmart Canada
+  [REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Walmart Canada
   ```
 
 - New File → `bestbuy_ca.csv`  
   Paste, save:
   ```
   barcode,product_name,price_cad,url,last_updated,retailer
-  060383849789,WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/060383849789,2025-08-08,Best Buy Canada
-  062911123456,Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/062911123456,2025-08-08,Best Buy Canada
+  [REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Best Buy Canada
+  [REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Best Buy Canada
   ```
 
 - New File → `homedepot_ca.csv`  
   Paste, save:
   ```
   barcode,product_name,price_cad,url,last_updated,retailer
-  062911123456,Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/062911123456,2025-08-08,Home Depot Canada
+  [REDACTED:PHONE 06••••••••56],Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Home Depot Canada
   ```
 
 ---
@@ -1274,8 +1274,8 @@ InstantPriceMatch/
 17) **Follow the on-screen menu**  
     - Choose `1` to enter a barcode manually.  
     - Test with these from the sample CSVs:
-      - `060383849789` (SSD) → BestBuy should be the cheapest.
-      - `062911123456` (paper towels) → Walmart should be the cheapest.
+      - `[REDACTED:PHONE 06••••••••89]` (SSD) → BestBuy should be the cheapest.
+      - `[REDACTED:PHONE 06••••••••56]` (paper towels) → Walmart should be the cheapest.
 
 18) **Check the output**  
     - The terminal will list all prices sorted low to high.  
@@ -1937,21 +1937,21 @@ Create these three files **inside** `data/retailers/`.
 ## `walmart_ca.csv`
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-062911123456,Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/062911123456,2025-08-08,Walmart Canada
-060383849789,WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/060383849789,2025-08-08,Walmart Canada
+[REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Walmart Canada
+[REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Walmart Canada
 ```
 
 ## `bestbuy_ca.csv`
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-060383849789,WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/060383849789,2025-08-08,Best Buy Canada
-062911123456,Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/062911123456,2025-08-08,Best Buy Canada
+[REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Best Buy Canada
+[REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Best Buy Canada
 ```
 
 ## `homedepot_ca.csv`
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-062911123456,Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/062911123456,2025-08-08,Home Depot Canada
+[REDACTED:PHONE 06••••••••56],Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Home Depot Canada
 ```
 
 Save each file.
@@ -1987,8 +1987,8 @@ python app.py
 ```
 
 3) Choose `1` and test these barcodes:
-- `060383849789` → Should show **Best Buy** as cheapest.
-- `062911123456` → Should show **Walmart** as cheapest.
+- `[REDACTED:PHONE 06••••••••89]` → Should show **Best Buy** as cheapest.
+- `[REDACTED:PHONE 06••••••••56]` → Should show **Walmart** as cheapest.
 
 4) Open the generated **PNG proof** in the new `proofs` folder. That’s what you show a cashier.
 
@@ -2089,8 +2089,8 @@ Right now you have:
 python app.py
 ```
 3. Choose **1** and enter a sample barcode:
-   - `060383849789` → Should show Best Buy as cheapest.
-   - `062911123456` → Should show Walmart as cheapest.
+   - `[REDACTED:PHONE 06••••••••89]` → Should show Best Buy as cheapest.
+   - `[REDACTED:PHONE 06••••••••56]` → Should show Walmart as cheapest.
 4. A proof PNG will be saved in the `proofs` folder.
 
 ---
@@ -2130,8 +2130,8 @@ walmart_ca.csv
 3. Paste this in:
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-062911123456,Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/062911123456,2025-08-08,Walmart Canada
-060383849789,WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/060383849789,2025-08-08,Walmart Canada
+[REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,6.97,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Walmart Canada
+[REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,79.98,https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Walmart Canada
 ```
 4. Press **Ctrl+S** to save.
 
@@ -2146,8 +2146,8 @@ bestbuy_ca.csv
 3. Paste this in:
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-060383849789,WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/060383849789,2025-08-08,Best Buy Canada
-062911123456,Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/062911123456,2025-08-08,Best Buy Canada
+[REDACTED:PHONE 06••••••••89],WD Blue 1TB 2.5" SSD,74.99,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89],[REDACTED:PHONE 20••••08],Best Buy Canada
+[REDACTED:PHONE 06••••••••56],Great Value Paper Towels 6-Roll,7.49,https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Best Buy Canada
 ```
 4. Save.
 
@@ -2161,7 +2161,7 @@ homedepot_ca.csv
 2. Paste this in:
 ```
 barcode,product_name,price_cad,url,last_updated,retailer
-062911123456,Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/062911123456,2025-08-08,Home Depot Canada
+[REDACTED:PHONE 06••••••••56],Paper Towels 6-Roll,7.25,https://www.homedepot.ca/product/[REDACTED:PHONE 06••••••••56],[REDACTED:PHONE 20••••08],Home Depot Canada
 ```
 3. Save.
 
@@ -2220,8 +2220,8 @@ python app.py
 When prompted:
 - Choose **`1`** for “Enter barcode manually”
 - Try:
-  - `060383849789` → should show **Best Buy** as cheapest.
-  - `062911123456` → should show **Walmart** as cheapest.
+  - `[REDACTED:PHONE 06••••••••89]` → should show **Best Buy** as cheapest.
+  - `[REDACTED:PHONE 06••••••••56]` → should show **Walmart** as cheapest.
 - After each search, a **proof PNG** will be saved in a new `proofs` folder.
 
 ---
@@ -2275,8 +2275,8 @@ python app.py
 1
 ```
 2) When it asks for a barcode, test with these (they match your CSVs):
-- `060383849789`  → should list prices from Walmart/BestBuy and pick **Best Buy** as cheapest.
-- `062911123456`  → should list prices from Walmart/Home Depot/BestBuy and pick **Walmart** as cheapest.
+- `[REDACTED:PHONE 06••••••••89]`  → should list prices from Walmart/BestBuy and pick **Best Buy** as cheapest.
+- `[REDACTED:PHONE 06••••••••56]`  → should list prices from Walmart/Home Depot/BestBuy and pick **Walmart** as cheapest.
 
 You’ll see:
 - A sorted list of all matching prices.
@@ -2556,8 +2556,8 @@ python app.py
 ```
 
 - Choose `1`
-- Enter `060383849789` (SSD) → BestBuy cheapest
-- Enter `062911123456` (paper towels) → Walmart cheapest
+- Enter `[REDACTED:PHONE 06••••••••89]` (SSD) → BestBuy cheapest
+- Enter `[REDACTED:PHONE 06••••••••56]` (paper towels) → Walmart cheapest
 
 If anything else pops up, tell me exactly what you see and I’ll fix it fast.
 
@@ -2708,8 +2708,8 @@ python app.py
 
 Then:
 - Choose `1`
-- Enter `060383849789` (SSD) → Best Buy cheapest
-- Enter `062911123456` (paper towels) → Walmart cheapest
+- Enter `[REDACTED:PHONE 06••••••••89]` (SSD) → Best Buy cheapest
+- Enter `[REDACTED:PHONE 06••••••••56]` (paper towels) → Walmart cheapest
 
 If anything else pops up, screenshot it again and I’ll sort it.
 
@@ -2812,8 +2812,8 @@ python app.py
 ```
 
 Then choose `1` and test:
-- `060383849789` → Best Buy cheapest
-- `062911123456` → Walmart cheapest
+- `[REDACTED:PHONE 06••••••••89]` → Best Buy cheapest
+- `[REDACTED:PHONE 06••••••••56]` → Walmart cheapest
 
 If anything else yells at you, send me the new message or a screenshot and I’ll sort it.
 
@@ -2828,21 +2828,21 @@ If anything else yells at you, send me the new message or a screenshot and I’l
 1) Enter barcode manually
 q) Quit
 Choose an option: 1
-Enter barcode (digits only or as-is): 060383849789
+Enter barcode (digits only or as-is): [REDACTED:PHONE 06••••••••89]
 
 All matching prices (low to high):
- - Best Buy Canada: $74.99 — WD Blue 1TB 2.5" SSD — https://www.bestbuy.ca/en-ca/product/060383849789        
- - Walmart Canada: $79.98 — WD Blue 1TB 2.5" SSD — https://www.walmart.ca/en/ip/060383849789
+ - Best Buy Canada: $74.99 — WD Blue 1TB 2.5" SSD — https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89]        
+ - Walmart Canada: $79.98 — WD Blue 1TB 2.5" SSD — https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••89]
 
 Cheapest: $74.99 at Best Buy Canada
 Product:  WD Blue 1TB 2.5" SSD
-Source:   https://www.bestbuy.ca/en-ca/product/060383849789
+Source:   https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89]
 Proof saved to: proofs\proof_060383849789_20250807_233144.png
 
 === Instant Price Match (Canada) ===
 1) Enter barcode manually
 q) Quit
-Choose an option: 062911123456
+Choose an option: [REDACTED:PHONE 06••••••••56]
 Invalid choice. Try again.
 
 === Instant Price Match (Canada) ===
@@ -2857,7 +2857,7 @@ That “Invalid choice” happened because you typed the barcode at the **menu**
 
 Two options:
 
-- **Right now:** press `1`, then paste `062911123456` when it asks for the barcode.  
+- **Right now:** press `1`, then paste `[REDACTED:PHONE 06••••••••56]` when it asks for the barcode.  
 - **Even better:** I’ll tweak the app so if you type a barcode at the menu, it just runs with it.
 
 Below is a **drop‑in replacement** for `app.py` that supports both flows (menu or direct barcode). Copy/paste it over your current file.
@@ -2964,8 +2964,8 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 python app.py
 ```
 3) Now at the menu you can either:
-   - Press `1` then enter `062911123456`, or  
-   - Just paste `062911123456` at the menu and hit Enter.
+   - Press `1` then enter `[REDACTED:PHONE 06••••••••56]`, or  
+   - Just paste `[REDACTED:PHONE 06••••••••56]` at the menu and hit Enter.
 
 Your proof image lands in `InstantPriceMatch\proofs\...png`. Double‑click it from VS Code’s Explorer to open.
 
@@ -2982,37 +2982,37 @@ okay i made a mistake the first time so i didnt update to the new script. see: (
 1) Enter barcode manually
 q) Quit
 Choose an option: 1
-Enter barcode (digits only or as-is): 060383849789
+Enter barcode (digits only or as-is): [REDACTED:PHONE 06••••••••89]
 
 All matching prices (low to high):
- - Best Buy Canada: $74.99 — WD Blue 1TB 2.5" SSD — https://www.bestbuy.ca/en-ca/product/060383849789        
- - Walmart Canada: $79.98 — WD Blue 1TB 2.5" SSD — https://www.walmart.ca/en/ip/060383849789
+ - Best Buy Canada: $74.99 — WD Blue 1TB 2.5" SSD — https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89]        
+ - Walmart Canada: $79.98 — WD Blue 1TB 2.5" SSD — https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••89]
 
 Cheapest: $74.99 at Best Buy Canada
 Product:  WD Blue 1TB 2.5" SSD
-Source:   https://www.bestbuy.ca/en-ca/product/060383849789
+Source:   https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••89]
 Proof saved to: proofs\proof_060383849789_20250807_233144.png
 
 === Instant Price Match (Canada) ===
 1) Enter barcode manually
 q) Quit
-Choose an option: 062911123456
+Choose an option: [REDACTED:PHONE 06••••••••56]
 Invalid choice. Try again.
 
 === Instant Price Match (Canada) ===
 1) Enter barcode manually
 q) Quit
 Choose an option: 1
-Enter barcode (digits only or as-is): 062911123456
+Enter barcode (digits only or as-is): [REDACTED:PHONE 06••••••••56]
 
 All matching prices (low to high):
- - Walmart Canada: $6.97 — Great Value Paper Towels 6-Roll — https://www.walmart.ca/en/ip/062911123456       
- - Home Depot Canada: $7.25 — Paper Towels 6-Roll — https://www.homedepot.ca/product/062911123456
- - Best Buy Canada: $7.49 — Great Value Paper Towels 6-Roll — https://www.bestbuy.ca/en-ca/product/062911123456
+ - Walmart Canada: $6.97 — Great Value Paper Towels 6-Roll — https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56]       
+ - Home Depot Canada: $7.25 — Paper Towels 6-Roll — https://www.homedepot.ca/product/[REDACTED:PHONE 06••••••••56]
+ - Best Buy Canada: $7.49 — Great Value Paper Towels 6-Roll — https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••56]
 
 Cheapest: $6.97 at Walmart Canada
 Product:  Great Value Paper Towels 6-Roll
-Source:   https://www.walmart.ca/en/ip/062911123456
+Source:   https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56]
 Proof saved to: proofs\proof_062911123456_20250807_233421.png
 
 === Instant Price Match (Canada) ===
@@ -3040,8 +3040,8 @@ Exactly — right now your app is **offline** and only works with whatever produ
 
 That’s why it’s only finding the two barcodes you added:  
 
-- `060383849789` → SSD  
-- `062911123456` → Paper Towels  
+- `[REDACTED:PHONE 06••••••••89]` → SSD  
+- `[REDACTED:PHONE 06••••••••56]` → Paper Towels  
 
 If you want this to work in the real world, we have to give it a way to **fetch live prices from retailer websites** instead of you having to keep the CSVs updated manually.  
 
@@ -3167,7 +3167,7 @@ Alright — if we’ve only got an hour tonight, here’s what I recommend so we
    - Also reads CSV competitor prices.
    - Shows the cheapest of both.
 
-That way, before you shut down tonight, you’ll be able to enter a UPC like `060383849789` (your SSD) and see a **live Best Buy price** side-by-side with a competitor price in your CSV.
+That way, before you shut down tonight, you’ll be able to enter a UPC like `[REDACTED:PHONE 06••••••••89]` (your SSD) and see a **live Best Buy price** side-by-side with a competitor price in your CSV.
 
 ---
 
@@ -3215,7 +3215,7 @@ So tonight we’ve got two realistic “quick win” paths:
 ---
 
 Since you’ve only got an hour, **Option 2 is faster** — we can write a scraper that:
-1. Takes your UPC (e.g., `060383849789`).
+1. Takes your UPC (e.g., `[REDACTED:PHONE 06••••••••89]`).
 2. Searches Best Buy Canada’s site for that UPC.
 3. Pulls the product name, price, and URL from the first search result.
 4. Feeds it into your existing “cheapest price” logic.
@@ -3721,7 +3721,7 @@ Kellogg's Corn Flakes 680g
 ```
 or  
 ```
-062911123456
+[REDACTED:PHONE 06••••••••56]
 ```
 
 Do you want me to also add **Home Depot Canada** or **Loblaws** live lookups so you can test competitors tonight?
@@ -3744,16 +3744,16 @@ No price data found (CSV or live). Try a different UPC/name.
 === Instant Price Match (Canada) — Groceries ===
 1) Enter UPC or Name manually
 q) Quit
-Choose an option (or paste UPC/name here): 062911123456
+Choose an option (or paste UPC/name here): [REDACTED:PHONE 06••••••••56]
 
 All matching prices (low to high):
- - Walmart Canada: $6.97 — Great Value Paper Towels 6-Roll — https://www.walmart.ca/en/ip/062911123456       
- - Home Depot Canada: $7.25 — Paper Towels 6-Roll — https://www.homedepot.ca/product/062911123456
- - Best Buy Canada: $7.49 — Great Value Paper Towels 6-Roll — https://www.bestbuy.ca/en-ca/product/062911123456
+ - Walmart Canada: $6.97 — Great Value Paper Towels 6-Roll — https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56]       
+ - Home Depot Canada: $7.25 — Paper Towels 6-Roll — https://www.homedepot.ca/product/[REDACTED:PHONE 06••••••••56]
+ - Best Buy Canada: $7.49 — Great Value Paper Towels 6-Roll — https://www.bestbuy.ca/en-ca/product/[REDACTED:PHONE 06••••••••56]
 
 Cheapest: $6.97 at Walmart Canada
 Product:  Great Value Paper Towels 6-Roll
-Source:   https://www.walmart.ca/en/ip/062911123456
+Source:   https://www.walmart.ca/en/ip/[REDACTED:PHONE 06••••••••56]
 Proof saved to: proofs\proof_062911123456_20250808_000505.png
 
 === Instant Price Match (Canada) — Groceries ===
@@ -5048,7 +5048,7 @@ Requirement already satisfied: playwright in c:\users\dmlac\onedrive\desktop\ins
 Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.4.2)
 Requirement already satisfied: idna<4,>=2.5 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.10)
 Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2.5.0)
-Requirement already satisfied: certifi>=2017.4.17 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
+Requirement already satisfied: certifi>=[REDACTED:PHONE 20••••17] in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
 Requirement already satisfied: soupsieve>1.2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from beautifulsoup4) (2.7)
 Requirement already satisfied: typing-extensions>=4.0.0 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from beautifulsoup4) (4.14.1)
 Requirement already satisfied: pyee<14,>=13 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from playwright) (13.0.0)
@@ -5097,13 +5097,13 @@ No price data found (live). Try a different UPC/name.
 === Instant Price Match (Canada) — Groceries ===
 1) Enter UPC or Name manually
 q) Quit
-Choose an option (or paste UPC/name here): 028400200608
+Choose an option (or paste UPC/name here): [REDACTED:PHONE 02••••••••08]
 No price data found (live). Try a different UPC/name.
 
 === Instant Price Match (Canada) — Groceries ===
 1) Enter UPC or Name manually
 q) Quit
-Choose an option (or paste UPC/name here): Lay's® Salt & Vinegar Flavored Potato Chips. 2.63 ozUPC: 0002840032385
+Choose an option (or paste UPC/name here): Lay's® Salt & Vinegar Flavored Potato Chips. 2.63 ozUPC: [REDACTED:PHONE 00•••••••••85]
 No price data found (live). Try a different UPC/name.
 
 === Instant Price Match (Canada) — Groceries ===
@@ -5208,7 +5208,7 @@ if __name__ == "__main__":
 ### What’s changed:
 1. **Correct typing** — replaced `string` with `str` so Python doesn’t throw an error.
 2. **Stealth user agent** — avoids Walmart blocking automated scripts.
-3. **UPC or name search** — works with `Pepsi` and `028400200608`.
+3. **UPC or name search** — works with `Pepsi` and `[REDACTED:PHONE 02••••••••08]`.
 4. **Cleaner selectors** — uses `data-automation` attributes which are more stable on Walmart.ca.
 5. **Error handling** — won’t crash if Walmart changes layout, just returns `None`.
 
@@ -5509,7 +5509,7 @@ Good question! Here’s how I see it — and how AI fits in:
 1. User types: `"big bottle pepsi 2L"`  
 2. Your app sends prompt to OpenAI API:  
    > “Given this product description, output the most likely UPC or a clean search string.”  
-3. OpenAI responds: `"0004900009708"` (example UPC) or `"Pepsi 2L bottle"`  
+3. OpenAI responds: `"[REDACTED:PHONE 00•••••••••08]"` (example UPC) or `"Pepsi 2L bottle"`  
 4. Your app uses that to query Walmart or your DB.  
 
 ---
@@ -5989,7 +5989,7 @@ if __name__ == "__main__":
 
 | barcode      | product_name           | brand     | quantity | packaging | categories        | labels        | ingredients_text | serving_size | nutrition_grade | image_url                         | last_updated_t |
 |--------------|-----------------------|-----------|----------|-----------|-------------------|---------------|------------------|--------------|-----------------|----------------------------------|----------------|
-| 062911123456 | Great Value Paper Towels | Great Value | 6-roll   | Plastic   | Household paper    |               |                  |              |                 | https://images.openfoodfacts.org/... | 1617880987     |
+| [REDACTED:PHONE 06••••••••56] | Great Value Paper Towels | Great Value | 6-roll   | Plastic   | Household paper    |               |                  |              |                 | https://images.openfoodfacts.org/... | [REDACTED:PHONE 16••••••87]     |
 
 ---
 
@@ -7356,7 +7356,7 @@ Collecting colorama (from tqdm)
 Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.4.2)
 Requirement already satisfied: idna<4,>=2.5 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.10)
 Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2.5.0)
-Requirement already satisfied: certifi>=2017.4.17 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
+Requirement already satisfied: certifi>=[REDACTED:PHONE 20••••17] in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
 Requirement already satisfied: numpy>=1.26.0 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from pandas) (2.2.6)
 Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from pandas) (2.9.0.post0)
 Requirement already satisfied: pytz>=2020.1 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from pandas) (2025.2)
@@ -7981,7 +7981,7 @@ If you want me to also hard-set `providers/scraper.py` defaults to `E:\Docs` so 
 >> pip install -r requirements.txt
 >> python app.py
 >>
-Requirement already satisfied: opencv-python in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from -r requirements.txt (line 1)) (4.12.0.88)
+Requirement already satisfied: opencv-python in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from -r requirements.txt (line [REDACTED:PHONE 14••••88])
 Requirement already satisfied: pyzbar in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from -r requirements.txt (line 2)) (0.1.9)
 Requirement already satisfied: Pillow in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from -r requirements.txt (line 3)) (11.3.0)
 Requirement already satisfied: pandas in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from -r requirements.txt (line 4)) (2.3.1)
@@ -7999,7 +7999,7 @@ Requirement already satisfied: six>=1.5 in c:\users\dmlac\onedrive\desktop\insta
 Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests->-r requirements.txt (line 6)) (3.4.2)
 Requirement already satisfied: idna<4,>=2.5 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests->-r requirements.txt (line 6)) (3.10)
 Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests->-r requirements.txt (line 6)) (2.5.0)
-Requirement already satisfied: certifi>=2017.4.17 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests->-r requirements.txt (line 6)) (2025.8.3)
+Requirement already satisfied: certifi>=[REDACTED:PHONE 20••••17] in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests->-r requirements.txt (line [REDACTED:PHONE 62••••83])
 Requirement already satisfied: soupsieve>1.2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from beautifulsoup4->-r requirements.txt (line 7)) (2.7)
 Requirement already satisfied: typing-extensions>=4.0.0 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from beautifulsoup4->-r requirements.txt (line 7)) (4.14.1)
 Requirement already satisfied: pyee<14,>=13 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from playwright->-r requirements.txt (line 10)) (13.0.0)
@@ -8577,7 +8577,7 @@ from providers.off_loader import load_latest_catalog, find_by_barcode, search_by
 
 CATALOG_BASE = r"E:\Docs"
 df = load_latest_catalog(CATALOG_BASE)
-print(find_by_barcode(df, "062911123456"))
+print(find_by_barcode(df, "[REDACTED:PHONE 06••••••••56]"))
 print(search_by_name(df, "pepsi 2l"))
 ```
 
@@ -13253,16 +13253,16 @@ Search mode — paste a UPC (digits) or type a product name.
 UPC or name: Oreo
 
 Results for 'Oreo':
- 1) [0066721008312] Oreo —    (score 100)
- 2) [6901668005830]  — Oreo   (score 100)
- 3) [0629014041535]  — Oreo   (score 100)
- 4) [0044000033255] Nabisco — Double Stuf Oreo 20 oz  (score 90)
- 5) [0066721000972] Christie — Oreo 300g  (score 90)
- 6) [0066721005694] Cristie — The Original Oreo 303 g  (score 90)
- 7) [0628154280026] Post — Oreo O's 311 g  (score 90)
- 8) [7622300744663] Oreo,Mondelēz — Original 220 g  (score 90)
- 9) [8410000810004] Oreo — Original Oreo 176g  (score 90)
-10) [0066721005816] Christie — Oreo 303g  (score 90)
+ 1) [[REDACTED:PHONE 00•••••••••12]] Oreo —    (score 100)
+ 2) [[REDACTED:PHONE 69•••••••••30]]  — Oreo   (score 100)
+ 3) [[REDACTED:PHONE 06•••••••••35]]  — Oreo   (score 100)
+ 4) [[REDACTED:PHONE 00•••••••••55]] Nabisco — Double Stuf Oreo 20 oz  (score 90)
+ 5) [[REDACTED:PHONE 00•••••••••72]] Christie — Oreo 300g  (score 90)
+ 6) [[REDACTED:PHONE 00•••••••••94]] Cristie — The Original Oreo 303 g  (score 90)
+ 7) [[REDACTED:PHONE 06•••••••••26]] Post — Oreo O's 311 g  (score 90)
+ 8) [[REDACTED:PHONE 76•••••••••63]] Oreo,Mondelēz — Original 220 g  (score 90)
+ 9) [[REDACTED:PHONE 84•••••••••04]] Oreo — Original Oreo 176g  (score 90)
+10) [[REDACTED:PHONE 00•••••••••16]] Christie — Oreo 303g  (score 90)
 
 
 === Instant Price Match (Canada) ===
@@ -13445,7 +13445,7 @@ Requirement already satisfied: Pillow in c:\users\dmlac\onedrive\desktop\instant
 Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.4.2)
 Requirement already satisfied: idna<4,>=2.5 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.10)
 Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2.5.0)
-Requirement already satisfied: certifi>=2017.4.17 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
+Requirement already satisfied: certifi>=[REDACTED:PHONE 20••••17] in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python app.py
 >>
 
@@ -13460,16 +13460,16 @@ Search mode — paste a UPC (digits) or type a product name.
 UPC or name: Oreo
 
 Results for 'Oreo':
- 1) [0066721008312] Oreo —    (score 100)
- 2) [6901668005830]  — Oreo   (score 100)
- 3) [0629014041535]  — Oreo   (score 100)
- 4) [0044000033255] Nabisco — Double Stuf Oreo 20 oz  (score 90)
- 5) [0066721000972] Christie — Oreo 300g  (score 90)
- 6) [0066721005694] Cristie — The Original Oreo 303 g  (score 90)
- 7) [0628154280026] Post — Oreo O's 311 g  (score 90)
- 8) [7622300744663] Oreo,Mondelēz — Original 220 g  (score 90)
- 9) [8410000810004] Oreo — Original Oreo 176g  (score 90)
-10) [0066721005816] Christie — Oreo 303g  (score 90)
+ 1) [[REDACTED:PHONE 00•••••••••12]] Oreo —    (score 100)
+ 2) [[REDACTED:PHONE 69•••••••••30]]  — Oreo   (score 100)
+ 3) [[REDACTED:PHONE 06•••••••••35]]  — Oreo   (score 100)
+ 4) [[REDACTED:PHONE 00•••••••••55]] Nabisco — Double Stuf Oreo 20 oz  (score 90)
+ 5) [[REDACTED:PHONE 00•••••••••72]] Christie — Oreo 300g  (score 90)
+ 6) [[REDACTED:PHONE 00•••••••••94]] Cristie — The Original Oreo 303 g  (score 90)
+ 7) [[REDACTED:PHONE 06•••••••••26]] Post — Oreo O's 311 g  (score 90)
+ 8) [[REDACTED:PHONE 76•••••••••63]] Oreo,Mondelēz — Original 220 g  (score 90)
+ 9) [[REDACTED:PHONE 84•••••••••04]] Oreo — Original Oreo 176g  (score 90)
+10) [[REDACTED:PHONE 00•••••••••16]] Christie — Oreo 303g  (score 90)
 
 
 === Instant Price Match (Canada) ===
@@ -13918,16 +13918,16 @@ Search mode — paste a UPC (digits) or type a product name.
 UPC or name: Oreo
 
 Results for 'Oreo':
- 1) [0066721008312] Oreo —    (score 100)
- 2) [6901668005830]  — Oreo   (score 100)
- 3) [0629014041535]  — Oreo   (score 100)
- 4) [0044000033255] Nabisco — Double Stuf Oreo 20 oz  (score 90)
- 5) [0066721000972] Christie — Oreo 300g  (score 90)
- 6) [0066721005694] Cristie — The Original Oreo 303 g  (score 90)
- 7) [0628154280026] Post — Oreo O's 311 g  (score 90)
- 8) [7622300744663] Oreo,Mondelēz — Original 220 g  (score 90)
- 9) [8410000810004] Oreo — Original Oreo 176g  (score 90)
-10) [0066721005816] Christie — Oreo 303g  (score 90)
+ 1) [[REDACTED:PHONE 00•••••••••12]] Oreo —    (score 100)
+ 2) [[REDACTED:PHONE 69•••••••••30]]  — Oreo   (score 100)
+ 3) [[REDACTED:PHONE 06•••••••••35]]  — Oreo   (score 100)
+ 4) [[REDACTED:PHONE 00•••••••••55]] Nabisco — Double Stuf Oreo 20 oz  (score 90)
+ 5) [[REDACTED:PHONE 00•••••••••72]] Christie — Oreo 300g  (score 90)
+ 6) [[REDACTED:PHONE 00•••••••••94]] Cristie — The Original Oreo 303 g  (score 90)
+ 7) [[REDACTED:PHONE 06•••••••••26]] Post — Oreo O's 311 g  (score 90)
+ 8) [[REDACTED:PHONE 76•••••••••63]] Oreo,Mondelēz — Original 220 g  (score 90)
+ 9) [[REDACTED:PHONE 84•••••••••04]] Oreo — Original Oreo 176g  (score 90)
+10) [[REDACTED:PHONE 00•••••••••16]] Christie — Oreo 303g  (score 90)
 
 
 === Instant Price Match (Canada) ===
@@ -13993,16 +13993,16 @@ Search mode — paste a UPC (digits) or type a product name.
 UPC or name: lays      
 
 Results for 'lays':
- 1) [9555076303469]  — Malaysia Teh Tarik   (score 90)
- 2) [0060410054208] Lay's — lays mix 18 x 28 g  (score 90)
- 3) [0060410071168]  — lays fromage nacho   (score 90)
- 4) [0065914104022]  — a   (score 90)
- 5) [0733739801104]  — a   (score 90)
- 6) [0006041004749] Lay's — lays lays  (score 90)
- 7) [0221306719513]  — y   (score 90)
- 8) [0060383725105]  — Large soft flour tortillas   (score 77)
- 9) [0060410025604] lay's — Lay's classic 28g  (score 77)
-10) [0058300006994] Old El Paso — Tortillas   (score 77)
+ 1) [[REDACTED:PHONE 95•••••••••69]]  — Malaysia Teh Tarik   (score 90)
+ 2) [[REDACTED:PHONE 00•••••••••08]] Lay's — lays mix 18 x 28 g  (score 90)
+ 3) [[REDACTED:PHONE 00•••••••••68]]  — lays fromage nacho   (score 90)
+ 4) [[REDACTED:PHONE 00•••••••••22]]  — a   (score 90)
+ 5) [[REDACTED:PHONE 07•••••••••04]]  — a   (score 90)
+ 6) [[REDACTED:PHONE 00•••••••••49]] Lay's — lays lays  (score 90)
+ 7) [[REDACTED:PHONE 02•••••••••13]]  — y   (score 90)
+ 8) [[REDACTED:PHONE 00•••••••••05]]  — Large soft flour tortillas   (score 77)
+ 9) [[REDACTED:PHONE 00•••••••••04]] lay's — Lay's classic 28g  (score 77)
+10) [[REDACTED:PHONE 00•••••••••94]] Old El Paso — Tortillas   (score 77)
 
 
 === Instant Price Match (Canada) ===
@@ -15016,11 +15016,11 @@ Instant Match — enter a UPC (digits) or a product name.
 UPC or name: pepsi 2l
 
 Pick the product to match:
- 1) [9829898581801] pepsi — pepsi   (score 95)
- 2) [0059084462631]  — pepsi 1l  (score 87)
- 3) [0069000009840] pepsi — Pepsi 710ml  (score 85)
- 4) [0066529700333] saputo — nutrilait 2l  (score 85)
- 5) [0055872700114] quebon — Lait Breuvage 1% 2l  (score 85)
+ 1) [[REDACTED:PHONE 98•••••••••01]] pepsi — pepsi   (score 95)
+ 2) [[REDACTED:PHONE 00•••••••••31]]  — pepsi 1l  (score 87)
+ 3) [[REDACTED:PHONE 00•••••••••40]] pepsi — Pepsi 710ml  (score 85)
+ 4) [[REDACTED:PHONE 00•••••••••33]] saputo — nutrilait 2l  (score 85)
+ 5) [[REDACTED:PHONE 00•••••••••14]] quebon — Lait Breuvage 1% 2l  (score 85)
 
 Choose 1-5 (or Enter to cancel): 1
 
@@ -18195,14 +18195,14 @@ Totally doable. Here’s the **exact, no-mystery** way to get DroidCam working w
    - Tap **WiFi** (not USB).  
    - Tap **Start** ▶️.  
    - The app will show something like:  
-     - **WiFi IP:** `192.168.1.47`  
-     - **Browser IP:** `http://192.168.1.47:4747`  
+     - **WiFi IP:** `[REDACTED:PHONE 19•••••47]`  
+     - **Browser IP:** `http://[REDACTED:PHONE 19•••••47]:4747`  
      - (That `:4747` is the port.)
 
 4. **Verify video works in a browser (optional but recommended):**  
    On your PC, open a browser and go to:  
    ```
-   http://192.168.1.47:4747/video
+   http://[REDACTED:PHONE 19•••••47]:4747/video
    ```  
    If you see live video, you’re golden.
 
@@ -18219,7 +18219,7 @@ You can do this either through **Settings** inside the app or by editing `config
 2. Choose **9) Settings**.  
 3. For **“Camera source”**, enter the full URL:  
    ```
-   http://192.168.1.47:4747/video
+   http://[REDACTED:PHONE 19•••••47]:4747/video
    ```  
    (Replace with your phone’s IP.)
 4. Leave **Camera index** alone (that’s for USB/PC webcams).
@@ -18246,7 +18246,7 @@ Open `config.json` and set it exactly like this (keep the rest as-is, just chang
   ],
   "auto_copy_url": true,
   "auto_open_browser": true,
-  "camera_source": "http://192.168.1.47:4747/video",
+  "camera_source": "http://[REDACTED:PHONE 19•••••47]:4747/video",
   "camera_index": 0
 }
 ```
@@ -18279,7 +18279,7 @@ Save the file.
 That’s it. Once you see the camera window and a green box around a UPC, you’re in business. Want me to add a **beep** and an **auto-capture** when it locks a code for >300ms?
 
 [object Object]
-the app is installed and working on my phone and also on the app on my pd i see a live video feed and thats working perfectly, but im stuck here, the top left of my phones screen says wifi/lan and under that it says https://10.0.0.187:4747 When i go to that in the browser im getting the attached image
+the app is installed and working on my phone and also on the app on my pd i see a live video feed and thats working perfectly, but im stuck here, the top left of my phones screen says wifi/lan and under that it says https://[REDACTED:PHONE 10••••87]:4747 When i go to that in the browser im getting the attached image
 
 
 
@@ -18289,12 +18289,12 @@ You’re super close—the only issue is the **URL you’re using**.
 
 What to do **exactly**:
 
-1) On your phone (DroidCam running), note the IP shown. Yours is `10.0.0.187`.  
+1) On your phone (DroidCam running), note the IP shown. Yours is `[REDACTED:PHONE 10••••87]`.  
    Ignore the “https://…:4747” line the app shows.
 
 2) On your PC, in the **address bar** (not the Google search box), type this **exact** URL and press Enter:  
    ```
-   http://10.0.0.187:4747/video
+   http://[REDACTED:PHONE 10••••87]:4747/video
    ```
    - Must be **http**, not https.  
    - Must include **/video** at the end.
@@ -18303,7 +18303,7 @@ What to do **exactly**:
    - Run `python app.py` → option **9) Settings**
    - Set **Camera source** to:
      ```
-     http://10.0.0.187:4747/video
+     http://[REDACTED:PHONE 10••••87]:4747/video
      ```
    - Leave camera index alone. Save.
 
@@ -18318,7 +18318,7 @@ If the browser still doesn’t show video:
 
 Troubleshooting quick checks:
 - Both phone & PC on the **same Wi-Fi**; no VPN on either.  
-- PowerShell: `Test-NetConnection 10.0.0.187 -Port 4747` should say `TcpTestSucceeded: True`.  
+- PowerShell: `Test-NetConnection [REDACTED:PHONE 10••••87] -Port 4747` should say `TcpTestSucceeded: True`.  
 - If Windows prompts, allow Python through the firewall (Private networks).
 
 Ping me if the `/video` URL still doesn’t load; we’ll flip to the virtual webcam path and lock it in.
@@ -18339,7 +18339,7 @@ That “**DroidCam is busy or unavailable**” means **something else already gr
 2) On the **phone**: in DroidCam tap **Stop**, then **Start** again (resets the server).
 3) In our app: **Settings → Camera source** = the exact URL:
    ```
-   http://10.0.0.187:4747/video
+   http://[REDACTED:PHONE 10••••87]:4747/video
    ```
    Leave **camera index** alone.
 4) Run **2) Scan barcode**.
@@ -18357,13 +18357,13 @@ That “**DroidCam is busy or unavailable**” means **something else already gr
 - Windows: allow **Python** through the firewall (Private networks).  
 - Network test (PowerShell):
   ```powershell
-  Test-NetConnection 10.0.0.187 -Port 4747
+  Test-NetConnection [REDACTED:PHONE 10••••87] -Port 4747
   ```
   `TcpTestSucceeded: True` = reachable.
 - If using Mode A, **close** the Windows DroidCam client entirely.  
 - If using Mode B, **don’t** open the `/video` URL in a browser.
 
-Try Mode A first (simpler): close everything, set `http://10.0.0.187:4747/video` in Settings, then run **Scan barcode**. If you still get the message, tell me which step it failed on and what was open at the time, and we’ll nail it.
+Try Mode A first (simpler): close everything, set `http://[REDACTED:PHONE 10••••87]:4747/video` in Settings, then run **Scan barcode**. If you still get the message, tell me which step it failed on and what was open at the time, and we’ll nail it.
 
 i cant restart the app on the phone unless the windows droid cam obs is open 
 
@@ -18423,7 +18423,7 @@ Nice—glad we sorted the app mix-up. You don’t need to change any Python now.
   ],
   "auto_copy_url": true,
   "auto_open_browser": true,
-  "camera_source": "http://10.0.0.187:4747/video",
+  "camera_source": "http://[REDACTED:PHONE 10••••87]:4747/video",
   "camera_index": 0
 }
 ```
@@ -18477,10 +18477,10 @@ WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 
         dir=0 sig=2a403 k=0 g0=ffffffff g1=cdb g2=d8d buf[0000]=
 WARNING: .\zbar\decoder\pdf417.c:73: <unknown>: Assertion "clst >= 0 && clst < 9" failed.
         dir=0 sig=5a04 k=9 buf[0000]=
-Scanned code: 0057000006976
+Scanned code: [REDACTED:PHONE 00•••••••••76]
 
 Pick the product to match:
- 1) [0057000006976] Heinz — Beans molasses & pork
+ 1) [[REDACTED:PHONE 00•••••••••76]] Heinz — Beans molasses & pork
 
 Choose 1-3 (or Enter to cancel):
 
@@ -18515,10 +18515,10 @@ WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 
         dir=0 sig=9421 k=6 g0=e67 g1=7bb g2=ffffffff buf[0000]=
 WARNING: .\zbar\decoder\pdf417.c:73: <unknown>: Assertion "clst >= 0 && clst < 9" failed.
         dir=1 sig=168128 k=ffffffff buf[0000]=
-Scanned code: 0057000003401
+Scanned code: [REDACTED:PHONE 00•••••••••01]
 
 Pick the product to match:
- 1) [0057000003401] Heinz — Jus de tomate
+ 1) [[REDACTED:PHONE 00•••••••••01]] Heinz — Jus de tomate
 
 Choose 1-3 (or Enter to cancel): 3
 Invalid choice.
@@ -18536,10 +18536,10 @@ Invalid choice.
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 0058496459727
+Scanned code: [REDACTED:PHONE 00•••••••••27]
 
 Pick the product to match:
- 1) [0058496459727]  — Poulet champêtre
+ 1) [[REDACTED:PHONE 00•••••••••27]]  — Poulet champêtre
 
 Choose 1-3 (or Enter to cancel): 1
 
@@ -18565,10 +18565,10 @@ WARNING: .\zbar\decoder\pdf417.c:73: <unknown>: Assertion "clst >= 0 && clst < 9
         dir=1 sig=44805 k=9 buf[0000]=
 WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 0 && g[2] >= 0" failed.
         dir=1 sig=10045 k=3 g0=c99 g1=ffffffff g2=878 buf[0000]=
-Scanned code: 0058496459727
+Scanned code: [REDACTED:PHONE 00•••••••••27]
 
 Pick the product to match:
- 1) [0058496459727]  — Poulet champêtre
+ 1) [[REDACTED:PHONE 00•••••••••27]]  — Poulet champêtre
 
 Choose 1-3 (or Enter to cancel): 3
 Invalid choice.
@@ -19357,7 +19357,7 @@ KeyboardInterrupt
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 058496459727
+Scanned code: [REDACTED:PHONE 05••••••••27]
 Not found in local CSV — trying UPCItemDB…
 No result from UPCItemDB either.
 
@@ -19374,7 +19374,7 @@ No result from UPCItemDB either.
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 057000006976
+Scanned code: [REDACTED:PHONE 05••••••••76]
 Not found in local CSV — trying UPCItemDB…
 
 Searching flyers near N6C 1E7 for: H.J. Heinz Company of Canada LP Heinz Original Beans With Pork & Molasses 
@@ -19393,7 +19393,7 @@ No flyer items found for that exact string. Try menu 4 with a simpler query.
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 057000006976
+Scanned code: [REDACTED:PHONE 05••••••••76]
 Not found in local CSV — trying UPCItemDB…
 
 Searching flyers near N6C 1E7 for: H.J. Heinz Company of Canada LP Heinz Original Beans With Pork & Molasses 
@@ -19438,7 +19438,7 @@ KeyboardInterrupt
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 064947130213
+Scanned code: [REDACTED:PHONE 06••••••••13]
 Not found in local CSV — trying UPCItemDB…
 
 Searching flyers near N6C 1E7 for: Unspecified Wonder Bread White 12 Essential Nutrients 10 Loaves Canadian  
@@ -20265,7 +20265,7 @@ If a scan still gives no flyers, read the console — it prints which variants i
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 057000006976
+Scanned code: [REDACTED:PHONE 05••••••••76]
 Not found in local CSV — trying OFF live…
 
 Searching flyers near N6C 1E7…
@@ -21261,7 +21261,7 @@ Want me to also add a tiny **“Store policy cheat sheet”** into the proof foo
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 057000006976
+Scanned code: [REDACTED:PHONE 05••••••••76]
 Not found in local CSV — trying OFF live…
 
 Searching flyers near N6C 1E7…
@@ -21330,7 +21330,7 @@ Choose an option: 9
 Settings:
 1) Auto-copy flyer URL: ON
 2) Auto-open flyer URL: ON
-3) Camera source: http://10.0.0.187:4747/video  (use 'auto' or 'http://PHONE_IP:4747/video')
+3) Camera source: http://[REDACTED:PHONE 10••••87]:4747/video  (use 'auto' or 'http://PHONE_IP:4747/video')
 4) Camera index:  0
 5) Strict matching: ON  (require keywords, prefer size)
 6) Auto-proof after best match: ON
@@ -21399,7 +21399,7 @@ so first one i tried was wrong i have uploaded the script and also the ss of the
 q) Quit
 Choose an option: 2
 Scanning… (ESC = cancel, ENTER = accept when green box appears)
-Scanned code: 067800003297
+Scanned code: [REDACTED:PHONE 06••••••••97]
 Not found in local CSV — trying OFF live…
 
 Searching flyers near N6C 1E7…
@@ -21669,7 +21669,7 @@ INDEX_PATH  = os.path.join(INDEX_DIR, "index.ann")
 META_PATH   = os.path.join(INDEX_DIR, "index_meta.csv")
 
 POSTAL_CODE = "N6C1E7"  # used for opening Flipp
-CAMERA_SRC  = "http://10.0.0.187:4747/video"  # "auto" or DroidCam URL
+CAMERA_SRC  = "http://[REDACTED:PHONE 10••••87]:4747/video"  # "auto" or DroidCam URL
 CROP_FRAC   = 0.60   # analyze center crop of the frame
 TOP_K       = 8
 
@@ -21935,7 +21935,7 @@ Collecting torch>=2.0 (from open-clip-torch)
 Collecting torchvision (from open-clip-torch)
   Using cached torchvision-0.23.0-cp313-cp313-win_amd64.whl.metadata (6.1 kB)
 Collecting regex (from open-clip-torch)
-  Using cached regex-2025.7.34-cp313-cp313-win_amd64.whl.metadata (41 kB)
+  Using cached regex-[REDACTED:PHONE 20••••34]-cp313-cp313-win_amd64.whl.metadata (41 kB)
 Collecting ftfy (from open-clip-torch)
   Using cached ftfy-6.3.1-py3-none-any.whl.metadata (7.3 kB)
 Collecting huggingface-hub (from open-clip-torch)
@@ -21952,7 +21952,7 @@ Requirement already satisfied: tzdata>=2022.7 in c:\users\dmlac\onedrive\desktop
 Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.4.2)
 Requirement already satisfied: idna<4,>=2.5 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (3.10)
 Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2.5.0)
-Requirement already satisfied: certifi>=2017.4.17 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
+Requirement already satisfied: certifi>=[REDACTED:PHONE 20••••17] in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from requests) (2025.8.3)
 Requirement already satisfied: six>=1.5 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv\lib\site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
 Collecting pyyaml (from timm>=1.0.17->open-clip-torch)
   Using cached PyYAML-6.0.2-cp313-cp313-win_amd64.whl.metadata (2.1 kB)
@@ -21994,7 +21994,7 @@ Using cached PyYAML-6.0.2-cp313-cp313-win_amd64.whl (156 kB)
 Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
 Using cached MarkupSafe-3.0.2-cp313-cp313-win_amd64.whl (15 kB)
 Using cached networkx-3.5-py3-none-any.whl (2.0 MB)
-Using cached regex-2025.7.34-cp313-cp313-win_amd64.whl (275 kB)
+Using cached regex-[REDACTED:PHONE 20••••34]-cp313-cp313-win_amd64.whl (275 kB)
 Downloading safetensors-0.6.2-cp38-abi3-win_amd64.whl (320 kB)
 Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
 Using cached torchvision-0.23.0-cp313-cp313-win_amd64.whl (1.6 MB)
@@ -22220,7 +22220,7 @@ EMB_PATH    = os.path.join(INDEX_DIR, "embeddings.npy")
 META_PATH   = os.path.join(INDEX_DIR, "index_meta.csv")
 
 POSTAL_CODE = "N6C1E7"
-CAMERA_SRC  = "http://10.0.0.187:4747/video"  # or "auto" for webcam
+CAMERA_SRC  = "http://[REDACTED:PHONE 10••••87]:4747/video"  # or "auto" for webcam
 CROP_FRAC   = 0.60
 TOP_K       = 8
 
@@ -22500,7 +22500,7 @@ EMB_PATH    = os.path.join(INDEX_DIR, "embeddings.npy")
 META_PATH   = os.path.join(INDEX_DIR, "index_meta.csv")
 
 POSTAL_CODE = "N6C1E7"  # no space when used in URL
-CAMERA_SRC  = "http://10.0.0.187:4747/video"  # or "auto" for webcam
+CAMERA_SRC  = "http://[REDACTED:PHONE 10••••87]:4747/video"  # or "auto" for webcam
 CROP_FRAC   = 0.60
 TOP_K       = 8
 
@@ -24569,7 +24569,7 @@ def open_camera():
     src = s.get("camera_source", "").strip()
     cam_index = int(s.get("camera_index", 0))
     if src and src.lower() != "auto":
-        cap = cv2.VideoCapture(src)  # DroidCam URL like http://10.0.0.187:4747/video
+        cap = cv2.VideoCapture(src)  # DroidCam URL like http://[REDACTED:PHONE 10••••87]:4747/video
     else:
         cap = cv2.VideoCapture(cam_index)  # default PC camera
     if not cap.isOpened():
@@ -24707,7 +24707,7 @@ python visual_scan.py
   You already have `torch` and `torchvision`. If it complains, tell me and I’ll give the exact line.
 
 - **Window opens but no camera**  
-  Open your main app’s **menu 9 (Settings)** and verify `camera_source` is your DroidCam URL `http://10.0.0.187:4747/video`.  
+  Open your main app’s **menu 9 (Settings)** and verify `camera_source` is your DroidCam URL `http://[REDACTED:PHONE 10••••87]:4747/video`.  
   Then re-run `python visual_scan.py`.
 
 - **Score stays grey/low**  
@@ -25217,7 +25217,7 @@ python -c "import sys; print(sys.version)"
 Should start with **3.12**.
 
 - **“Could not open camera”** in `visual_scan.py`? Open your main app → menu **9 (Settings)** → confirm:
-  - Camera source is your DroidCam URL, e.g. `http://10.0.0.187:4747/video`.
+  - Camera source is your DroidCam URL, e.g. `http://[REDACTED:PHONE 10••••87]:4747/video`.
   - Or set to `auto` and use Camera Index `0`.
 
 - **Embeddings shape mismatch / missing files**: Delete only the **index** folder to rebuild:
@@ -25405,7 +25405,7 @@ python visual_scan.py
   python -c "import sys; print(sys.version)"
   ```
 - Visual index build says “Missing embeddings/metadata” → just means first run; let it finish.  
-- Camera won’t open in `visual_scan.py` → open your main app → **menu 9 Settings** → verify `camera_source` is your DroidCam URL (`http://10.0.0.187:4747/video`) or set `auto` and use `camera_index: 0`.
+- Camera won’t open in `visual_scan.py` → open your main app → **menu 9 Settings** → verify `camera_source` is your DroidCam URL (`http://[REDACTED:PHONE 10••••87]:4747/video`) or set `auto` and use `camera_index: 0`.
 
 ---
 
@@ -25494,7 +25494,7 @@ python visual_scan.py
   ```
   Must start with **3.12**.
 - Builder says *“0 images”* → make sure your latest CSV is the one with `image_url` populated (`F:\Docs\off_data\latest\off_canada_products.csv`). If not, re-run your `rebuild_off_csv_with_images.py`.
-- Camera in `visual_scan.py` won’t open → in your main app, menu **9 (Settings)** set `camera_source` to your DroidCam URL (e.g. `http://10.0.0.187:4747/video`) or use `auto` + `camera_index: 0`.
+- Camera in `visual_scan.py` won’t open → in your main app, menu **9 (Settings)** set `camera_source` to your DroidCam URL (e.g. `http://[REDACTED:PHONE 10••••87]:4747/video`) or use `auto` + `camera_index: 0`.
 
 Run Step 1 now. If you see any red text, stop and drop it here — I’ll patch it fast.
 
@@ -25577,7 +25577,7 @@ Collecting opencv-python
 Requirement already satisfied: torch>=2.0 in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv312\lib\site-packages (from open-clip-torch) (2.4.1)
 Requirement already satisfied: torchvision in c:\users\dmlac\onedrive\desktop\instantpricematch\.venv312\lib\site-packages (from open-clip-torch) (0.19.1)
 Collecting regex (from open-clip-torch)
-  Downloading regex-2025.7.34-cp312-cp312-win_amd64.whl.metadata (41 kB)
+  Downloading regex-[REDACTED:PHONE 20••••34]-cp312-cp312-win_amd64.whl.metadata (41 kB)
 Collecting ftfy (from open-clip-torch)
   Using cached ftfy-6.3.1-py3-none-any.whl.metadata (7.3 kB)
 Collecting huggingface-hub (from open-clip-torch)
@@ -25601,7 +25601,7 @@ Collecting idna<4,>=2.5 (from requests)
   Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
 Collecting urllib3<3,>=1.21.1 (from requests)
   Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
-Collecting certifi>=2017.4.17 (from requests)
+Collecting certifi>=[REDACTED:PHONE 20••••17] (from requests)
   Using cached certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
 Collecting numpy>=1.26.0 (from pandas)
   Downloading numpy-2.2.6-cp312-cp312-win_amd64.whl.metadata (60 kB)
@@ -25641,7 +25641,7 @@ Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
 Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
 Using cached ftfy-6.3.1-py3-none-any.whl (44 kB)
 Using cached huggingface_hub-0.34.4-py3-none-any.whl (561 kB)
-Downloading regex-2025.7.34-cp312-cp312-win_amd64.whl (275 kB)
+Downloading regex-[REDACTED:PHONE 20••••34]-cp312-cp312-win_amd64.whl (275 kB)
 Using cached safetensors-0.6.2-cp38-abi3-win_amd64.whl (320 kB)
 Using cached packaging-25.0-py3-none-any.whl (66 kB)
 Downloading PyYAML-6.0.2-cp312-cp312-win_amd64.whl (156 kB)
@@ -25652,7 +25652,7 @@ Installing collected packages: wcwidth, pytz, urllib3, tzdata, six, safetensors,
     Found existing installation: numpy 2.3.2
     Uninstalling numpy-2.3.2:
       Successfully uninstalled numpy-2.3.2
-Successfully installed certifi-2025.8.3 charset_normalizer-3.4.2 colorama-0.4.6 ftfy-6.3.1 huggingface-hub-0.34.4 idna-3.10 numpy-2.2.6 open-clip-torch-3.1.0 opencv-python-4.12.0.88 packaging-25.0 pandas-2.3.1 python-dateutil-2.9.0.post0 pytz-2025.2 pyyaml-6.0.2 regex-2025.7.34 requests-2.32.4 safetensors-0.6.2 six-1.17.0 timm-1.0.19 tqdm-4.67.1 tzdata-2025.2 urllib3-2.5.0 wcwidth-0.2.13
+Successfully installed certifi-2025.8.3 charset_normalizer-3.4.2 colorama-0.4.6 ftfy-6.3.1 huggingface-hub-0.34.4 idna-3.10 numpy-2.2.6 open-clip-torch-3.1.0 opencv-python-4.12.0.88 packaging-25.0 pandas-2.3.1 python-dateutil-2.9.0.post0 pytz-2025.2 pyyaml-6.0.2 regex-[REDACTED:PHONE 20••••34] requests-2.32.4 safetensors-0.6.2 six-1.17.0 timm-1.0.19 tqdm-4.67.1 tzdata-2025.2 urllib3-2.5.0 wcwidth-0.2.13
 
 [notice] A new release of pip is available: 25.0.1 -> 25.2
 [notice] To update, run: python.exe -m pip install --upgrade pip
@@ -25705,7 +25705,7 @@ python visual_scan.py
 - **Esc/Q** = quit
 
 If the camera doesn’t open, in your main app use **menu 9 (Settings)** and set:
-- **Camera source:** your DroidCam URL, e.g. `http://10.0.0.187:4747/video`
+- **Camera source:** your DroidCam URL, e.g. `http://[REDACTED:PHONE 10••••87]:4747/video`
 - Or set **camera_source** to `auto` and use **camera_index: 0**
 
 ---
@@ -25848,7 +25848,7 @@ python visual_scan.py
 - **Esc/Q** = quit
 
 If the camera doesn’t open, go to your main app → **9) Settings** and set:
-- `Camera source: http://10.0.0.187:4747/video` (your DroidCam URL)
+- `Camera source: http://[REDACTED:PHONE 10••••87]:4747/video` (your DroidCam URL)
 - or `Camera source: auto` and `Camera index: 0`
 
 ---
@@ -27220,22 +27220,22 @@ dir tools
 >>
 
 Recent proof images (newest first):
-  1) proof_Real_Canadian_Superstore_20250808_185934.png    2025-08-08 18:59:34
-  2) proof_Shoppers_Drug_Mart_20250808_185701.png    2025-08-08 18:57:01
-  3) proof_Sobeys_20250808_184931.png    2025-08-08 18:49:31
-  4) proof_Sobeys_20250808_183449.png    2025-08-08 18:34:49
-  5) proof_Sobeys_20250808_183212.png    2025-08-08 18:32:12
-  6) proof_Sobeys_20250808_170129.png    2025-08-08 17:01:29
-  7) proof_Loblaws_20250808_165756.png    2025-08-08 16:57:56
-  8) proof_Sobeys_20250808_164710.png    2025-08-08 16:47:10
-  9) proof_Real_Canadian_Superstore_20250808_155745.png    2025-08-08 15:57:45
- 10) proof_Princess_Auto_20250808_155125.png    2025-08-08 15:51:26
- 11) proof_Loblaws_20250808_155044.png    2025-08-08 15:50:44
- 12) proof_Unknown_store_20250808_154035.png    2025-08-08 15:40:35
- 13) proof_Unknown_store_20250808_153029.png    2025-08-08 15:30:29
- 14) proof_062911123456_20250808_000505.png    2025-08-08 00:05:05
- 15) proof_062911123456_20250807_233421.png    2025-08-07 23:34:21
- 16) proof_060383849789_20250807_233144.png    2025-08-07 23:31:44
+  1) proof_Real_Canadian_Superstore_20250808_185934.png    [REDACTED:PHONE 20••••••18]:59:34
+  2) proof_Shoppers_Drug_Mart_20250808_185701.png    [REDACTED:PHONE 20••••••18]:57:01
+  3) proof_Sobeys_20250808_184931.png    [REDACTED:PHONE 20••••••18]:49:31
+  4) proof_Sobeys_20250808_183449.png    [REDACTED:PHONE 20••••••18]:34:49
+  5) proof_Sobeys_20250808_183212.png    [REDACTED:PHONE 20••••••18]:32:12
+  6) proof_Sobeys_20250808_170129.png    [REDACTED:PHONE 20••••••17]:01:29
+  7) proof_Loblaws_20250808_165756.png    [REDACTED:PHONE 20••••••16]:57:56
+  8) proof_Sobeys_20250808_164710.png    [REDACTED:PHONE 20••••••16]:47:10
+  9) proof_Real_Canadian_Superstore_20250808_155745.png    [REDACTED:PHONE 20••••••15]:57:45
+ 10) proof_Princess_Auto_20250808_155125.png    [REDACTED:PHONE 20••••••15]:51:26
+ 11) proof_Loblaws_20250808_155044.png    [REDACTED:PHONE 20••••••15]:50:44
+ 12) proof_Unknown_store_20250808_154035.png    [REDACTED:PHONE 20••••••15]:40:35
+ 13) proof_Unknown_store_20250808_153029.png    [REDACTED:PHONE 20••••••15]:30:29
+ 14) proof_062911123456_20250808_000505.png    [REDACTED:PHONE 20••••••00]:05:05
+ 15) proof_062911123456_20250807_233421.png    [REDACTED:PHONE 20••••••23]:34:21
+ 16) proof_060383849789_20250807_233144.png    [REDACTED:PHONE 20••••••23]:31:44
 
 How many to include?
  - Type a number (e.g. 5) for that many newest
@@ -28700,12 +28700,12 @@ Parent            : tools
 Exists            : True
 Root              : C:\
 Extension         :
-CreationTime      : 2025-08-08 10:49:17 PM
-CreationTimeUtc   : 2025-08-09 2:49:17 AM
-LastAccessTime    : 2025-08-08 10:49:37 PM
-LastAccessTimeUtc : 2025-08-09 2:49:37 AM
-LastWriteTime     : 2025-08-08 10:49:37 PM
-LastWriteTimeUtc  : 2025-08-09 2:49:37 AM
+CreationTime      : [REDACTED:PHONE 20••••••10]:49:17 PM
+CreationTimeUtc   : [REDACTED:PHONE 20•••••92]:49:17 AM
+LastAccessTime    : [REDACTED:PHONE 20••••••10]:49:37 PM
+LastAccessTimeUtc : [REDACTED:PHONE 20•••••92]:49:37 AM
+LastWriteTime     : [REDACTED:PHONE 20••••••10]:49:37 PM
+LastWriteTimeUtc  : [REDACTED:PHONE 20•••••92]:49:37 AM
 Attributes        : 525361
 Mode              : dar--l
 BaseName          : tools
@@ -28713,12 +28713,12 @@ Target            : {}
 LinkType          :
 
 
-LastWriteTime : 2025-08-08 10:29:44 PM
+LastWriteTime : [REDACTED:PHONE 20••••••10]:29:44 PM
 Length        : 1108
 Name          : bundle_all_proofs.py
 
 
-LastWriteTime : 2025-08-08 9:53:09 PM
+LastWriteTime : [REDACTED:PHONE 20•••••89]:53:09 PM
 Length        : 6481
 Name          : bundle_from_proofs.py
 
@@ -29640,7 +29640,7 @@ python build_visual_index.py --mode embed --limit 2000 --device cpu
 ```
 
 If network and OFF image variants are reachable, you should get non‑zero “[dl] ok”. If it still says failed for all:
-- Paste me **1 barcode** (e.g., `057000006976`) and I’ll confirm a working image URL quickly.
+- Paste me **1 barcode** (e.g., `[REDACTED:PHONE 05••••••••76]`) and I’ll confirm a working image URL quickly.
 - We can add more fallback filenames (`2.jpg`, `front_en.200.jpg`, etc.) or handle PNGs.
 
 # 3) When that works
@@ -29829,7 +29829,7 @@ EXTS = [".jpg", ".png", ".jpeg"]
 # ---------------------------------
 def chunk_barcode_dirs(barcode: str) -> str:
     """OFF splits barcode digits into 3/3/3/... folders, with the last chunk whatever remains.
-       Example: 3017620422003 -> 301/762/042/2003
+       Example: [REDACTED:PHONE 30•••••••••03] -> 301/762/042/2003
     """
     b = "".join(ch for ch in barcode if ch.isdigit())
     if not b:
@@ -30424,7 +30424,7 @@ def _clean_text(x: Optional[str]) -> str:
 def _split_off_path_from_barcode(barcode: str) -> str:
     """
     OFF image tree path: split the digits by chunks of 3.
-    Example: 1234567890123 -> 123/456/789/0123
+    Example: [REDACTED:PHONE 12•••••••••23] -> 123/456/789/0123
     """
     digits = "".join(ch for ch in barcode if ch.isdigit())
     if not digits:
@@ -30836,7 +30836,7 @@ if __name__ == "__main__":
 
 Run:
 ```powershell
-python tools\probe_off_image.py 057000006976
+python tools\probe_off_image.py [REDACTED:PHONE 05••••••••76]
 ```
 
 Tell me the status code you get (200/403/404/etc).
@@ -30878,17 +30878,17 @@ Ping me with:
 >> 
 
 
-barcode      : 0008577002786
+barcode      : [REDACTED:PHONE 00•••••••••86]
 product_name : Organic Vermont Maple Syrup Grade A Dark Color Robust Taste
 image_url    : https://images.openfoodfacts.org/images/products/000/857/700/2786/front_en.40
                0.jpg
 
-barcode      : 0011110020758
+barcode      : [REDACTED:PHONE 00•••••••••58]
 product_name : Imitation vanilla flavor
 image_url    : https://images.openfoodfacts.org/images/products/001/111/002/0758/front_en.40
                0.jpg
 
-barcode      : 0011110416469
+barcode      : [REDACTED:PHONE 00•••••••••69]
 product_name : 1% low-fat milk
 image_url    : https://images.openfoodfacts.org/images/products/001/111/041/6469/front_en.40
                0.jpg
@@ -31806,7 +31806,7 @@ Loading: F:\Docs\off_data\latest\off_canada_products.csv
 [dl]: 100%|███████████████████████████████████████████████████████| 10/10 [00:12<00:00,  1.30s/it]
 [dl] done — ok: 9 | failed: 1
 [dl] sample failures:
-   - code=0012502638919 url=https://images.openfoodfacts.org/images/products/001/250/263/8919/front_en.400.jpg => no_working_image
+   - code=[REDACTED:PHONE 00•••••••••19] url=https://images.openfoodfacts.org/images/products/001/250/263/8919/front_en.400.jpg => no_working_image
 
 
 
@@ -33448,15 +33448,15 @@ In the same terminal, run these and tell me what each prints:
 
 ```powershell
 # A known-good sample image (v2 CDN)
-python -c "import requests; print(requests.get('https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg', timeout=20).status_code)"
+python -c "import requests; print(requests.get('https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg', timeout=20).status_code)"
 
 # HEAD via curl (sometimes clearer than Python errors)
-curl.exe -I https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg
+curl.exe -I https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg
 ```
 
 Also try opening this in your browser:
 ```
-https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg
+https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg
 ```
 - **If browser = 200 but Python/curl fail** → likely a local cert/firewall issue inside that venv.
 - **If all = 404** → unlucky sample; we’ll test a few other barcodes from your CSV.
@@ -33533,10 +33533,10 @@ Send me the outputs from step **1/2**. That will tell us instantly whether this 
 
 [object Object]
 1. (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> # A known-good sample image (v2 CDN) 
->> python -c "import requests; print(requests.get('https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg', timeout=20).status_code)"
+>> python -c "import requests; print(requests.get('https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg', timeout=20).status_code)"
 >>
 >> # HEAD via curl (sometimes clearer than Python errors)
->> curl.exe -I https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg
+>> curl.exe -I https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg
 
 2. is a screenshot of the browser that it opened 
 
@@ -33615,9 +33615,9 @@ Let’s do this cleanly.
 Run these **exact** commands:
 
 ```powershell
-python -c "import requests;print(requests.get('https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg',timeout=20,headers={'User-Agent':'InstantPriceMatch/0.1'}).status_code)"
+python -c "import requests;print(requests.get('https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg',timeout=20,headers={'User-Agent':'InstantPriceMatch/0.1'}).status_code)"
 
-curl.exe -I https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg
+curl.exe -I https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg
 ```
 
 - Expect `200` and HTTP headers.  
@@ -33797,7 +33797,7 @@ You should start seeing `ok: X | failed: Y` with some successes.
 If you want `curl` to stop yelling while we debug:
 
 ```powershell
-curl.exe --ssl-no-revoke -I https://images.openfoodfacts.org/v2/product/0011110020758/front/400.jpg
+curl.exe --ssl-no-revoke -I https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 00•••••••••58]/front/400.jpg
 # or temporarily:
 [System.Net.ServicePointManager]::CheckCertificateRevocationList = $false
 ```
@@ -33812,11 +33812,11 @@ curl.exe --ssl-no-revoke -I https://images.openfoodfacts.org/v2/product/00111100
 
 53 bytes)
 
-barcode: 14100084761 | name: Goldfish Cheddar Baked Snack Cracker
-  test https://images.openfoodfacts.org/v2/product/14100084761/front/400.jpg -> 404 (25266 bytes)
-  test https://images.openfoodfacts.org/v2/product/14100084761/front/200.jpg -> 404 (25266 bytes)
-  test https://images.openfoodfacts.org/v2/product/14100084761/front/100.jpg -> 404 (25266 bytes)
-  test https://images.openfoodfacts.org/v2/product/14100084761/front/full.jpg -> 404 (25266 bytes)
+barcode: [REDACTED:PHONE 14•••••••61] | name: Goldfish Cheddar Baked Snack Cracker
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••61]/front/400.jpg -> [REDACTED:PHONE 40••••66] bytes)
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••61]/front/200.jpg -> [REDACTED:PHONE 40••••66] bytes)
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••61]/front/100.jpg -> [REDACTED:PHONE 40••••66] bytes)
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••61]/front/full.jpg -> [REDACTED:PHONE 40••••66] bytes)
   test https://images.openfoodfacts.org/images/products/141/000/847/61/front_en.400.jpg -> 404 (153 bytes)
   test https://images.openfoodfacts.org/images/products/141/000/847/61/front_en.200.jpg -> 404 (153 bytes)
   test https://images.openfoodfacts.org/images/products/141/000/847/61/front_en.100.jpg -> 404 (153 bytes)
@@ -33824,11 +33824,11 @@ barcode: 14100084761 | name: Goldfish Cheddar Baked Snack Cracker
   test https://images.openfoodfacts.org/images/products/141/000/847/61/front.200.jpg -> 404 (153 bytes)
   test https://images.openfoodfacts.org/images/products/141/000/847/61/front.100.jpg -> 404 (153 bytes)
 
-barcode: 14100170945 | name: Goldfish Cheese Trio
-  test https://images.openfoodfacts.org/v2/product/14100170945/front/400.jpg -> 404 (25266 bytes)
-  test https://images.openfoodfacts.org/v2/product/14100170945/front/200.jpg -> 404 (25266 bytes)
-  test https://images.openfoodfacts.org/v2/product/14100170945/front/100.jpg -> 404 (25266 bytes)
-  test https://images.openfoodfacts.org/v2/product/14100170945/front/full.jpg -> 404 (25266 bytes)
+barcode: [REDACTED:PHONE 14•••••••45] | name: Goldfish Cheese Trio
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••45]/front/400.jpg -> [REDACTED:PHONE 40••••66] bytes)
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••45]/front/200.jpg -> [REDACTED:PHONE 40••••66] bytes)
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••45]/front/100.jpg -> [REDACTED:PHONE 40••••66] bytes)
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••45]/front/full.jpg -> [REDACTED:PHONE 40••••66] bytes)
   test https://images.openfoodfacts.org/images/products/141/001/709/45/front_en.400.jpg -> 404 (153 bytes)
   test https://images.openfoodfacts.org/images/products/141/001/709/45/front_en.200.jpg -> 404 (153 bytes)
   test https://images.openfoodfacts.org/images/products/141/001/709/45/front_en.100.jpg -> 404 (153 bytes)
@@ -33836,9 +33836,9 @@ barcode: 14100170945 | name: Goldfish Cheese Trio
   test https://images.openfoodfacts.org/images/products/141/001/709/45/front.200.jpg -> 404 (153 bytes)
   test https://images.openfoodfacts.org/images/products/141/001/709/45/front.100.jpg -> 404 (153 bytes)
 
-barcode: 14100170952 | name: Goldfish cheddar
-  test https://images.openfoodfacts.org/v2/product/14100170952/front/400.jpg -> 404 (25266 bytes)
-  test https://images.openfoodfacts.org/v2/product/14100170952/front/200.jpg -> 404 (25266 bytes)
+barcode: [REDACTED:PHONE 14•••••••52] | name: Goldfish cheddar
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••52]/front/400.jpg -> [REDACTED:PHONE 40••••66] bytes)
+  test https://images.openfoodfacts.org/v2/product/[REDACTED:PHONE 14•••••••52]/front/200.jpg -> [REDACTED:PHONE 40••••66] bytes)
 
 
 
@@ -36754,7 +36754,7 @@ Get-ChildItem -Recurse -Include *.jpg,*.png,*.webp -File |
 ```
 You’ll likely see paths like:
 ```
-C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\images\14100084761.jpg
+C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\images\[REDACTED:PHONE 14•••••••61].jpg
 ```
 
 Then run the matcher again:
@@ -36771,8 +36771,8 @@ When it asks for the photo path, paste one of those full paths (quotes are fine)
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
-dar--l        2025-08-09   1:08 AM                000
-dar--l        2025-08-09   1:08 AM                418
+dar--l        [REDACTED:PHONE 20•••••91]:08 AM                000
+dar--l        [REDACTED:PHONE 20•••••91]:08 AM                418
 
 
     Directory: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\images\images\products\005\850\000    
@@ -36780,7 +36780,7 @@ dar--l        2025-08-09   1:08 AM                418
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
-dar--l        2025-08-09   1:08 AM                0402
+dar--l        [REDACTED:PHONE 20•••••91]:08 AM                0402
 
 
     Directory: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\images\images\products\005\850\418    
@@ -36788,7 +36788,7 @@ dar--l        2025-08-09   1:08 AM                0402
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
-dar--l        2025-08-09   1:08 AM                1060
+dar--l        [REDACTED:PHONE 20•••••91]:08 AM                1060
 
 
     Directory: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\images\images\products\005\856        
@@ -36796,7 +36796,7 @@ dar--l        2025-08-09   1:08 AM                1060
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
-dar--l        2025-08-09   1:08 AM                916
+dar--l        [REDACTED:PHONE 20•••••91]:08 AM                916
 
 
     Directory: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\images\images\products\005\856\916    
@@ -36804,7 +36804,7 @@ dar--l        2025-08-09   1:08 AM                916
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
-dar--l        2025-08-09   1:08 AM                1212
+dar--l        [REDACTED:PHONE 20•••••91]:08 AM                1212
 (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch>
 
 
@@ -37469,7 +37469,7 @@ Source : C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\pyth
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
--a---l        2025-08-09   2:55 AM           3680 clip_meta.parquet
+-a---l        [REDACTED:PHONE 20•••••92]:55 AM           3680 clip_meta.parquet
 Get-Item : Cannot find path 'C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\embeddings\clip_index.ann'        
 because it does not exist.
 At line:1 char:1
@@ -37779,8 +37779,8 @@ python tools\make_pro_proof.py
 Store name: no frills
 Price (e.g. $1.99): $1.99
 Item name: pepsi
-Valid from (YYYY-MM-DD): 2025-08-09
-Valid to   (YYYY-MM-DD): 2025-08-12
+Valid from (YYYY-MM-DD): [REDACTED:PHONE 20••••09]
+Valid to   (YYYY-MM-DD): [REDACTED:PHONE 20••••12]
 Flyer URL (paste from Flipp or store flyer): https://example.com/fake-flyer
 ```
 
@@ -38036,7 +38036,7 @@ Price (e.g. $1.99): 1.99
 Item name: pepsi
 Valid from (YYYY-MM-DD): 20250809
 Valid to   (YYYY-MM-DD): 20250813
-Flyer URL (paste from Flipp or store flyer): https://flipp.com/en-ca/london-on/item/948025290-freshco-weekly-eflyer-08070813
+Flyer URL (paste from Flipp or store flyer): https://flipp.com/en-ca/london-on/item/[REDACTED:PHONE 94•••••90]-freshco-weekly-eflyer-08070813
 [info] Using latest proof image: proof_Freshmart_20250808_233900.png
 C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\tools\make_pro_proof.py:26: DeprecationWarning: "uni" parameter is deprecated since v2.5.1, unused and will soon be removed
   self.add_font("ArialUni", "",  arial,   uni=True)
@@ -39105,13 +39105,13 @@ if __name__ == "__main__":
 - **Image DB**: `InstantPriceMatch\images\images\products\`  
 - **CSV Source**: `F:\Docs\off_data\latest\off_canada_products.csv`  
 - **Pro Proof Maker script**: `tools\make_pro_proof.py`  
-- **Flyer URL example**: `https://flipp.com/en-ca/london-on/item/948025290-freshco-weekly-eflyer-08070813`  
+- **Flyer URL example**: `https://flipp.com/en-ca/london-on/item/[REDACTED:PHONE 94•••••90]-freshco-weekly-eflyer-08070813`  
 
 ---
 
 Do you want me to now **rewrite `visual_match_menu.py` so it uses this NumPy search** automatically when Annoy isn’t installed? That would let you test matches immediately.
 
-take me to this line in the chat :Flyer URL example: https://flipp.com/en-ca/london-on/item/948025290-freshco-weekly-eflyer-08070813
+take me to this line in the chat :Flyer URL example: https://flipp.com/en-ca/london-on/item/[REDACTED:PHONE 94•••••90]-freshco-weekly-eflyer-08070813
 
 Do you want me to now rewrite visual_match_menu.py so it uses this NumPy search automatically when Annoy isn’t installed? That would let you test matches immediately.
 
@@ -41060,7 +41060,7 @@ $env:OPENAI_API_KEY = "sk-PASTE_YOUR_KEY"
 ```
 2) Run this **exact single line** (if you ever see `>>`, press Ctrl+C and retype on one line):
 ```
-python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_(26899145485).jpg
+python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_([REDACTED:PHONE 26•••••••85]).jpg
 ```
 
 You should get JSON out (brand/name/size_text/etc).
@@ -41069,7 +41069,7 @@ You should get JSON out (brand/name/size_text/etc).
 1) Create a folder and download the file:
 ```
 mkdir images
-Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_(26899145485).jpg" -OutFile ".\images\coke.jpg"
+Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_([REDACTED:PHONE 26•••••••85]).jpg" -OutFile ".\images\coke.jpg"
 ```
 2) Run the script against the local file:
 ```
@@ -41089,7 +41089,7 @@ python tools\vision_identify.py --image ".\images\coke.jpg"
 
 Once you get valid JSON back, tell me and I’ll wire this vision step into `app.py` and fix the Walmart lookup mismatch. I’ll return full files so you can paste them in one shot.
 
-(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_(26899145485).jpg
+(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_([REDACTED:PHONE 26•••••••85]).jpg
 >>
 Traceback (most recent call last):
   File "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\tools\vision_identify.py", line 122, in <module>
@@ -41279,7 +41279,7 @@ Do this in your activated venv:
 
 ```
 mkdir images
-Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -OutFile ".\images\coke.jpg"
+Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
 python tools\vision_identify.py --image ".\images\coke.jpg"
 ```
 
@@ -41294,7 +41294,7 @@ If PowerShell ever shows `>>`, press Ctrl+C and retype the command on **one line
 Now that the script encodes the path, this URL should also work directly:
 
 ```
-python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_(26899145485).jpg
+python tools\vision_identify.py --image https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_([REDACTED:PHONE 26•••••••85]).jpg
 ```
 
 If a CDN still returns a 404, the script will throw a clear error telling you to use a local file instead. The local-file flow (Step 2) will always work.
@@ -41314,7 +41314,7 @@ If a CDN still returns a 404, the script will throw a clear error telling you to
 - **Still failing?** Paste the latest traceback and I’ll adjust. If needed, I’ll wire the vision flow into `app.py` next and return full files so you can paste and move on.
 
  it came back with images : (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> mkdir images 
->> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -OutFile ".\images\coke.jpg"
+>> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
 >> python tools\vision_identify.py --image ".\images\coke.jpg"
 
 You’re in a PowerShell “continuation” state (`>>`). That means PowerShell thinks your command isn’t finished, so it glued your next lines together. Fix is simple.
@@ -41337,7 +41337,7 @@ Now the image + test:
 
 ```
 mkdir images
-Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -OutFile ".\images\coke.jpg"
+Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
 python .\tools\vision_identify.py --image ".\images\coke.jpg"
 ```
 
@@ -41348,7 +41348,7 @@ python .\tools\vision_identify.py --image ".\images\coke.jpg"
 If you prefer a one-liner download (avoids `Invoke-WebRequest` quirks), use this instead of the middle line:
 
 ```
-curl.exe -L "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -o ".\images\coke.jpg"
+curl.exe -L "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -o ".\images\coke.jpg"
 ```
 
 ## Quick debug if anything hiccups
@@ -41366,7 +41366,7 @@ curl.exe -L "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Col
 Once you get the JSON output, say “ready” and I’ll drop in a full, copy-paste `app.py` that wires this Vision-first step in AND fixes the Walmart function mismatch.
 
 mkdir images
-Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -OutFile ".\images\coke.jpg"
+Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
 python .\tools\vision_identify.py --image ".\images\coke.jpg"
 
 
@@ -41618,7 +41618,7 @@ Traceback (most recent call last):
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'strip'
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> mkdir images
->> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -OutFile ".\images\coke.jpg"
+>> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
 >> python tools\vision_identify.py --image ".\images\coke.jpg"
 >> ^C
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
@@ -41628,10 +41628,10 @@ AttributeError: 'NoneType' object has no attribute 'strip'
 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
 
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> mkdir images
->> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -OutFile ".\images\coke.jpg"
+>> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
 >> python .\tools\vision_identify.py --image ".\images\coke.jpg"
 >> mkdir images
->> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%2826899145485%29.jpg" -OutFile ".\images\coke.jpg"
+>> Invoke-WebRequest -Uri "https://upload.wikimedia.org/wikipedia/commons/a/aa/Can_of_Coca_Cola_%[REDACTED:PHONE 28•••••••••85]%29.jpg" -OutFile ".\images\coke.jpg"
 >> python .\tools\vision_identify.py --image ".\images\coke.jpg"
 >> ^C
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python app.py --image ".\images\coke.jpg"
@@ -43777,7 +43777,7 @@ def grab_frame(ip: str, port: int = 4747, timeout: float = 4.0) -> str:
     Raises RuntimeError if no image can be captured.
     """
     if not ip:
-        raise ValueError("ip is required, e.g. '192.168.1.23'")
+        raise ValueError("ip is required, e.g. '[REDACTED:PHONE 19•••••23]'")
     base, snapshot_paths, stream_paths = _build_urls(ip, port)
 
     # 1) Try snapshots
@@ -43856,7 +43856,7 @@ def grab_frame(ip: str, port: int = 4747, timeout: float = 4.0) -> str:
     2) If that fails, try to pull a single frame from MJPEG stream via OpenCV
     """
     if not ip:
-        raise ValueError("Missing ip (e.g., 192.168.1.23)")
+        raise ValueError("Missing ip (e.g., [REDACTED:PHONE 19•••••23])")
 
     base, snapshots, streams = _build_urls(ip, port)
 
@@ -43995,7 +43995,7 @@ if __name__ == "__main__":
     parser.add_argument("--upc", default=None)
     parser.add_argument("--name", default=None)
     parser.add_argument("--country", default="CA")
-    parser.add_argument("--droidcam-ip", default=None, help="DEV ONLY: phone IP for DroidCam (e.g., 192.168.1.23)")
+    parser.add_argument("--droidcam-ip", default=None, help="DEV ONLY: phone IP for DroidCam (e.g., [REDACTED:PHONE 19•••••23])")
     parser.add_argument("--droidcam-port", type=int, default=4747, help="DEV ONLY: DroidCam port (default 4747)")
     parser.add_argument("--out", default="last_result.json")
     args = parser.parse_args()
@@ -44095,7 +44095,7 @@ def main():
         store_in = st.selectbox("Store I’m in", ["Walmart", "Best Buy", "Home Depot", "Other"], index=0)
         country = st.selectbox("Country", ["CA", "US"], index=0)
         dev_use_droidcam = st.checkbox("DEV: Use DroidCam instead of the app camera", value=False)
-        droid_ip = st.text_input("DroidCam IP (e.g., 192.168.1.23)", value="", disabled=not dev_use_droidcam)
+        droid_ip = st.text_input("DroidCam IP (e.g., [REDACTED:PHONE 19•••••23])", value="", disabled=not dev_use_droidcam)
         droid_port = st.number_input("DroidCam Port", value=4747, step=1, disabled=not dev_use_droidcam)
         show_debug = st.checkbox("Show debug JSON", value=False)
         st.markdown("---")
@@ -45277,7 +45277,7 @@ if __name__ == "__main__":
 2) In your venv, run:
 
 ```powershell
-python dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+python dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 ```
 
 (Replace `--ip` with your phone’s IP shown in DroidCam.)
@@ -45311,7 +45311,7 @@ What you’ll see:
 
 If you want, say “add Best Buy next” and I’ll hand you a ready-to-paste adapter + small changes to this dev tool to display best overall/accepted price right in the HUD.
 
-(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 >>
 C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv\Scripts\python.exe: can't open file 'C:\\Users\\dmlac\\OneDrive\\Desktop\\InstantPriceMatch\\dev_live_scan_cv.py': [Errno 2] No such file or directory
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch>  
@@ -45572,7 +45572,7 @@ if __name__ == "__main__":
 Replace the IP with your phone’s DroidCam IP:
 
 ```powershell
-python dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+python dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 ```
 
 You’ll get:
@@ -45584,11 +45584,11 @@ You’ll get:
 ## 4) If anything errors
 - “No module named cv2”: `pip install opencv-python`
 - “tools.droidcam not found”: confirm the file is here → `Test-Path .\tools\droidcam.py` should be `True`.
-- Black feed: open this in a browser first: `http://10.0.0.187:4747/video`. If that’s black, switch cameras in the DroidCam app / grant permission / keep the app in foreground.
+- Black feed: open this in a browser first: `http://[REDACTED:PHONE 10••••87]:4747/video`. If that’s black, switch cameras in the DroidCam app / grant permission / keep the app in foreground.
 
 Want me to add Best Buy / Home Depot adapters now so the HUD can say “Best price across X stores”? I can drop in full files next.
 
-(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 >>
   File "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py", line 1
     Set-Content -Encoding UTF8 .\dev_live_scan_cv.py @"
@@ -45867,7 +45867,7 @@ if __name__ == "__main__":
 Replace the IP with your phone’s DroidCam IP:
 
 ```powershell
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 ```
 
 You should see:
@@ -45880,13 +45880,13 @@ You should see:
 
 ## Quick sanity checks if anything errors
 - `ModuleNotFoundError: No module named 'cv2'` → `pip install opencv-python`
-- `Could not open DroidCam stream` → in a browser, visit `http://10.0.0.187:4747/video`. If that’s black, switch camera in the DroidCam app or grant permission.
+- `Could not open DroidCam stream` → in a browser, visit `http://[REDACTED:PHONE 10••••87]:4747/video`. If that’s black, switch camera in the DroidCam app or grant permission.
 - `tools.droidcam` import issue → confirm the file exists:  
   `Test-Path .\tools\droidcam.py` should return `True`.
 
 If you want me to add **Best Buy** and **Home Depot** lookups next so the HUD shows the best across multiple stores, say the word—I’ll give you full drop-in files and wire them into this dev tool.
 
-(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 Traceback (most recent call last):
   File "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py", line 23, in <module>
     from tools.droidcam import open_capture, read_frame_rgb
@@ -45958,7 +45958,7 @@ def grab_frame(ip: str, port: int = 4747, timeout: float = 4.0) -> str:
     2) If they fail, pull one frame from the MJPEG stream via OpenCV.
     """
     if not ip:
-        raise ValueError("Missing ip (e.g., 192.168.1.23). Open DroidCam on the phone to see IP/port.")
+        raise ValueError("Missing ip (e.g., [REDACTED:PHONE 19•••••23]). Open DroidCam on the phone to see IP/port.")
     base = _base(ip, port)
 
     # 1) Fast path: snapshots
@@ -46039,7 +46039,7 @@ pip install --upgrade opencv-python pillow requests
 Replace the IP with your phone’s IP shown in the DroidCam app:
 
 ```
-Start-Process "http://10.0.0.187:4747/video"
+Start-Process "http://[REDACTED:PHONE 10••••87]:4747/video"
 ```
 
 You should see a live preview. If it’s black in the browser, switch cameras in the DroidCam app or grant camera permission, then try again.
@@ -46049,7 +46049,7 @@ You should see a live preview. If it’s black in the browser, switch cameras in
 # 4) Run your dev scanner again
 
 ```
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 ```
 
 What you should see:
@@ -46468,7 +46468,7 @@ if __name__ == "__main__":
 ## How to run (same as before)
 
 ```powershell
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --store Walmart --country CA
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --store Walmart --country CA
 ```
 
 What’s new:
@@ -47212,7 +47212,7 @@ def main():
 ## 4) Run it
 
 ```powershell
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 What you’ll see:
@@ -47239,7 +47239,7 @@ What you’ll see:
 If you want, I can add a tiny **store policy filter** and a **proof-PNG composer** next.
 
 [object Object]
-this is what it came back with : (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+this is what it came back with : (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch>
 
 
@@ -47262,14 +47262,14 @@ We’ll still fix the *runtime* side now.
 
 ## Step 1 — Quick camera sanity check (2-line test)
 
-1) Make sure DroidCam is open on your phone and **http://10.0.0.187:4747/video** works in a desktop browser.
+1) Make sure DroidCam is open on your phone and **http://[REDACTED:PHONE 10••••87]:4747/video** works in a desktop browser.
 2) Run this tiny check:
 
 ```powershell
 cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
 python - << 'PY'
 from tools.droidcam import open_capture, read_frame_rgb
-cap = open_capture("10.0.0.187", 4747)
+cap = open_capture("[REDACTED:PHONE 10••••87]", 4747)
 frame = read_frame_rgb(cap)
 print("CAPTURED:", frame is not None, " SHAPE:", None if frame is None else frame.shape)
 cap.release()
@@ -47286,7 +47286,7 @@ If it prints `False`, the stream isn’t delivering frames—flip cameras in the
 Run:
 
 ```powershell
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 You should get a live window. If it still returns immediately, we’ll add one quick debug print to confirm where it stops.
@@ -47393,20 +47393,20 @@ exit()
 Run this **exact one-liner** (it’s Python run via `-c`, so PowerShell won’t choke):
 
 ```powershell
-python -c "from tools.droidcam import open_capture, read_frame_rgb; cap=open_capture('10.0.0.187',4747); f=read_frame_rgb(cap); print('CAPTURED:', f is not None, 'SHAPE:', None if f is None else f.shape); cap.release()"
+python -c "from tools.droidcam import open_capture, read_frame_rgb; cap=open_capture('[REDACTED:PHONE 10••••87]',4747); f=read_frame_rgb(cap); print('CAPTURED:', f is not None, 'SHAPE:', None if f is None else f.shape); cap.release()"
 ```
 
 **Expected:**  
 `CAPTURED: True SHAPE: (H, W, 3)`
 
 - If it prints `False`, open this in your browser to confirm the phone is streaming:  
-  `http://10.0.0.187:4747/video`  
+  `http://[REDACTED:PHONE 10••••87]:4747/video`  
   (If that’s black, switch cameras in the DroidCam app and keep the app in the foreground.)
 
 ## 3) Run the hybrid dev scanner (no Streamlit)
 ```powershell
 cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 Tips:
 - Press **r** to rotate 90° if the feed is sideways.
@@ -47422,7 +47422,7 @@ They’re just lint warnings:
 
 If the dev scanner still exits instantly after step 2 says `CAPTURED: True`, tell me what it prints, and I’ll add tiny debug prints for you (or paste a patched file).
 
-(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python -c "from tools.droidcam import open_capture, read_frame_rgb; cap=open_capture('10.0.0.187',4747); f=read_frame_rgb(cap); print('CAPTURED:', f is not None, 'SHAPE:', None if f is None else f.shape); cap.release()"
+(.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> python -c "from tools.droidcam import open_capture, read_frame_rgb; cap=open_capture('[REDACTED:PHONE 10••••87]',4747); f=read_frame_rgb(cap); print('CAPTURED:', f is not None, 'SHAPE:', None if f is None else f.shape); cap.release()"
 CAPTURED: True SHAPE: (480, 640, 3)
 (.venv) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> 
 
@@ -47434,7 +47434,7 @@ Let’s run the hybrid scanner now.
 ## Run the live dev scanner
 ```powershell
 cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### What to do in the window
@@ -48697,7 +48697,7 @@ if __name__ == "__main__":
 ## Step 4 — Run it
 
 ```powershell
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### What you’ll see
@@ -48780,7 +48780,7 @@ $env:OPENAI_API_KEY = "sk-REPLACE_WITH_YOUR_KEY"
 ## 4) DroidCam sanity (you already passed once, do it again if you want)
 
 ```powershell
-python -c "from tools.droidcam import open_capture, read_frame_rgb; cap=open_capture('10.0.0.187',4747); f=read_frame_rgb(cap); print('CAPTURED:', f is not None, 'SHAPE:', None if f is None else f.shape); cap.release()"
+python -c "from tools.droidcam import open_capture, read_frame_rgb; cap=open_capture('[REDACTED:PHONE 10••••87]',4747); f=read_frame_rgb(cap); print('CAPTURED:', f is not None, 'SHAPE:', None if f is None else f.shape); cap.release()"
 ```
 
 Expected: `CAPTURED: True`.
@@ -48790,7 +48790,7 @@ Expected: `CAPTURED: True`.
 ## 5) Run the hybrid dev scanner (with HTML side panel + Proof PNG)
 
 ```powershell
-python .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 What will happen:
@@ -48820,7 +48820,7 @@ These are just lint warnings (not errors):
 That means the script is using a different Python than the venv. Force it:
 
 ```powershell
-.\.venv\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 (That guarantees we run with the venv where you installed packages.)
@@ -48885,7 +48885,7 @@ python -c "import os; print('KEY SET' if os.getenv('OPENAI_API_KEY') else 'MISSI
 
 ### 6) Run the dev scanner (use the venv’s python to be 100% sure)
 ```powershell
-.\.venv\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 #### Notes / gotchas
@@ -48933,7 +48933,7 @@ python -c "import os; print('PYTHON_SEES_KEY' if os.getenv('OPENAI_API_KEY') els
 
 ### 5) Run the scanner using the venv’s Python
 ```powershell
-.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If you still see “PYTHON_MISSING_KEY”, you’re in the wrong interpreter. In VS Code hit `Ctrl+Shift+P` → **Python: Select Interpreter** → choose `.venv312\Scripts\python.exe`, then run step 5 again.
@@ -48981,7 +48981,7 @@ Then open a **new** PowerShell, re-activate the venv (first two lines in step 1)
 
 ### 5) Run the dev scanner
 ```powershell
-.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 What should happen:
@@ -49039,7 +49039,7 @@ python -c "import os; print('PYTHON_SEES_KEY' if os.getenv('OPENAI_API_KEY') els
 
 5) Run the scanner (using the venv’s Python)
 ```powershell
-.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If the length still looks tiny, you didn’t paste the full key—try again (and don’t share it anywhere).
@@ -49059,7 +49059,7 @@ Gotcha—thanks for clarifying. If those two lines printed:
 ```powershell
 cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
 .\.venv312\Scripts\python.exe -m pip install --upgrade openai pillow requests opencv-python pyzbar
-.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### What you should see
@@ -49072,13 +49072,13 @@ cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
 
 ### If anything goes sideways
 - **`ModuleNotFoundError: openai`** → you’re not using the venv. Use the command above that starts with `.\.venv312\Scripts\python.exe …`
-- **Black/blank feed** → make sure the DroidCam app is open & in the foreground; confirm `http://10.0.0.187:4747/video` works in a browser.
+- **Black/blank feed** → make sure the DroidCam app is open & in the foreground; confirm `http://[REDACTED:PHONE 10••••87]:4747/video` works in a browser.
 - **No side panel** → your browser might block local file refresh. Manually open: `C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\results.html`.
 - **No barcode boxes** → that just means ZBar isn’t installed; vision still works.
 
 Run those commands and tell me exactly what shows up (or any error text) and I’ll jump on it.
 
-(.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+(.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 >> 
 (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> 
 
@@ -49603,7 +49603,7 @@ if __name__ == "__main__":
 ### 2) Run it **unbuffered** so all prints show
 ```powershell
 cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
-.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 You should now see lines like:
@@ -49611,7 +49611,7 @@ You should now see lines like:
 [DEV] Python: 3.12.x
 [DEV] cv2.__version__: 4.x
 [DEV] OPENAI_API_KEY present: True len: 5x
-[DEV] Opening DroidCam stream... http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream... http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream open attempt done. First read...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Windows created. Entering main loop.
@@ -49650,7 +49650,7 @@ You should see `OK` and `python ok` immediately (no `>>`).
 
 ### 4) Run the scanner (unbuffered so debug prints show)
 ```powershell
-.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### 5) If you still see nothing, check the run log
@@ -49677,19 +49677,19 @@ Press **Ctrl+C** until you see a normal prompt:
 2) **Run with stop-parsing** (PowerShell won’t try to be clever):
 ```powershell
 cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
-.\.venv312\Scripts\python.exe --% -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe --% -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If you still get `>>`, try the quoted, absolute-path version:
 ```powershell
 & "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" `
   "-u" "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" `
-  "--ip" "10.0.0.187" "--port" "4747" "--country" "CA" "--store" "Walmart"
+  "--ip" "[REDACTED:PHONE 10••••87]" "--port" "4747" "--country" "CA" "--store" "Walmart"
 ```
 
 Or just use **Command Prompt (cmd.exe)** to dodge PS entirely:
 ```cmd
-C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 3) **If nothing prints**, check the debug log:
@@ -49722,7 +49722,7 @@ Use your PC’s regular **Command Prompt (cmd.exe)** (Start menu → type “cmd
 Then run this **exact** command (single line):
 
 ```
-C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If a window opens or you see lines starting with `[DEV]`, you’re good. If not, copy whatever it prints and drop it here.
@@ -49757,7 +49757,7 @@ and creates a `captures\run.log`). Save the file.
 
 ### Step 3 — Run from cmd with the venv’s Python (absolute paths)
 ```
-C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 You should now see lines like:
@@ -49766,7 +49766,7 @@ You should now see lines like:
 [DEV] Python: 3.12.x
 [DEV] cv2.__version__: ...
 [DEV] OPENAI_API_KEY present: True len: ...
-[DEV] Opening DroidCam stream... http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream... http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream open attempt done. First read...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Windows created. Entering main loop.
@@ -49795,7 +49795,7 @@ Quick copy-paste:
 
 ```
 findstr /C:"[DEV]" "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py"
-"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 (Press Win+R → type `cmd` → Enter to open it.)
@@ -50357,7 +50357,7 @@ if __name__ == "__main__":
 Copy/paste this single line:
 
 ```
-C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If anything still prints nothing, open the log and paste the last lines to me:
@@ -50366,17 +50366,17 @@ If anything still prints nothing, open the log and paste the last lines to me:
 type C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\run.log
 ```
 
-Microsoft Windows [Version 10.0.26100.4652]
+Microsoft Windows [Version [REDACTED:PHONE 10••••••••52]]
 (c) Microsoft Corporation. All rights reserved.
 
-C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 [DEV] === dev_live_scan_cv.py starting ===
 [DEV] Importing app modules...
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 7
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
-[tcp @ 0000022355ae3900] Connection to tcp://10.0.0.187:4747 failed: Error number -138 occurred
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
+[tcp @ 0000022355ae3900] Connection to tcp://[REDACTED:PHONE 10••••87]:4747 failed: Error number -138 occurred
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
@@ -50397,7 +50397,7 @@ C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Script
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[http @ 0000022355aec7c0] Stream ends prematurely at 16833948, should be 18446744073709551615
+[http @ 0000022355aec7c0] Stream ends prematurely at 16833948, should be [REDACTED:PHONE 18••••••••••••••••15]
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
@@ -50411,13 +50411,13 @@ Traceback (most recent call last):
        ^^^^^^^^^^^^^^^
 KeyboardInterrupt
 ^C
-C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 [DEV] === dev_live_scan_cv.py starting ===
 [DEV] Importing app modules...
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 7
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
@@ -50458,7 +50458,7 @@ WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[http @ 00000242518737c0] Stream ends prematurely at 31972811, should be 18446744073709551615
+[http @ 00000242518737c0] Stream ends prematurely at 31972811, should be [REDACTED:PHONE 18••••••••••••••••15]
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
@@ -50482,13 +50482,13 @@ Traceback (most recent call last):
 KeyboardInterrupt
 ^C
 C:\Users\dmlac>
-C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 [DEV] === dev_live_scan_cv.py starting ===
 [DEV] Importing app modules...
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 7
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
@@ -50514,13 +50514,13 @@ Traceback (most recent call last):
                 ^^^^^^^^^^
 KeyboardInterrupt
 ^C
-C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+C:\Users\dmlac>C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 [DEV] === dev_live_scan_cv.py starting ===
 [DEV] Importing app modules...
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 7
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
@@ -50540,9 +50540,9 @@ WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[DEV] LOCK: UPC:048500022269  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982892.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 04••••••••69]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982892.jpg
 [DEV] Opened results page: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\results.html
-[DEV] Lookup thread started for UPC:048500022269
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 04••••••••69]
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 0 && g[2] >= 0" failed.
@@ -50589,8 +50589,8 @@ WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 
 WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 0 && g[2] >= 0" failed.
         dir=0 sig=76d k=0 g0=ffffffff g1=6bd g2=8ab buf[0000]=
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[DEV] LOCK: UPC:064100136908  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982930.jpg
-[DEV] Lookup thread started for UPC:064100136908
+[DEV] LOCK: UPC:[REDACTED:PHONE 06••••••••08]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982930.jpg
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 06••••••••08]
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 0 && g[2] >= 0" failed.
         dir=0 sig=e18 k=6 g0=ffffffff g1=c55 g2=623 buf[0000]=
@@ -50608,11 +50608,11 @@ WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[DEV] LOCK: UPC:4079177707407  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
-[DEV] Lookup thread started for UPC:4079177707407
+[DEV] LOCK: UPC:[REDACTED:PHONE 40•••••••••07]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 40•••••••••07]
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[DEV] LOCK: UPC:059124707401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
-[DEV] LOCK: UPC:059724101401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982946.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982946.jpg
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
@@ -50632,7 +50632,7 @@ WARNING: .\zbar\decoder\pdf417.c:89: <unknown>: Assertion "g[0] >= 0 && g[1] >= 
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[http @ 000001aeecce37c0] Stream ends prematurely at 98412214, should be 18446744073709551615
+[http @ 000001aeecce37c0] Stream ends prematurely at 98412214, should be [REDACTED:PHONE 18••••••••••••••••15]
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] Shutting down…
@@ -50662,7 +50662,7 @@ That means the variable is set to a **placeholder** like `sk-XXXX` (7 chars), no
    ```
 2. Run the scanner again:
    ```
-   C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+   C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
    ```
 
 ### B) Make it persist for future windows (optional)
@@ -50797,7 +50797,7 @@ C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> .\.venv312\Scripts\activate.b
 ```
 You should see a length much larger than 7. Then run:
 ```
-python -u dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python -u dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### For PowerShell (if you use it too)
@@ -50812,12 +50812,12 @@ $env:OPENAI_API_KEY = 'sk-...YOUR FULL KEY...'
 3) Save, then:
 ```
 . .\.venv312\Scripts\Activate.ps1
-python -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If you just want a **one-time quick test right now** (no persistence), you can do:
 ```
-set "OPENAI_API_KEY=sk-...YOUR FULL KEY..." & C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+set "OPENAI_API_KEY=sk-...YOUR FULL KEY..." & C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 But long-term, venv-scoped is the winner.
@@ -50854,7 +50854,7 @@ for /f "usebackq tokens=*" %%I in (`"%PYTHON_EXE%" -c "import os;print('PY_OK' i
 echo Python sees key: %PY_OK%
 
 echo Ready. Run:
-echo    "%PYTHON_EXE%" -u "%PROJECT_DIR%dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+echo    "%PYTHON_EXE%" -u "%PROJECT_DIR%dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### File 2 — `Activate-Dev.ps1` (PowerShell)
@@ -50879,7 +50879,7 @@ Write-Host "OPENAI_API_KEY present: $has  len: $len"
 & $Python -c "import os;print('PY_OK' if os.getenv('OPENAI_API_KEY') else 'PY_MISSING')"
 
 Write-Host "Ready. Run:" -ForegroundColor Green
-Write-Host "  `"$Python`" -u `"$ProjectDir\dev_live_scan_cv.py`" --ip 10.0.0.187 --port 4747 --country CA --store Walmart"
+Write-Host "  `"$Python`" -u `"$ProjectDir\dev_live_scan_cv.py`" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart"
 ```
 
 ### How to use (pick one)
@@ -50940,7 +50940,7 @@ for /f "usebackq tokens=*" %%I in (`"%PYTHON_EXE%" -c "import os;print('PY_OK' i
 echo Python sees key: %PY_OK%
 
 echo Ready. Run:
-echo    "%PYTHON_EXE%" -u "%PROJECT_DIR%dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+echo    "%PYTHON_EXE%" -u "%PROJECT_DIR%dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### Use it
@@ -50981,7 +50981,7 @@ Write-Host "OPENAI_API_KEY present: $has  len: $len"
 & $Python -c "import os;print('PY_OK' if os.getenv('OPENAI_API_KEY') else 'PY_MISSING')"
 
 Write-Host "Ready. Run:" -ForegroundColor Green
-Write-Host "  `"$Python`" -u `"$ProjectDir\dev_live_scan_cv.py`" --ip 10.0.0.187 --port 4747 --country CA --store Walmart"
+Write-Host "  `"$Python`" -u `"$ProjectDir\dev_live_scan_cv.py`" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart"
 ```
 
 3) If PowerShell blocks scripts, run this **once**:
@@ -50998,7 +50998,7 @@ cd C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch
 
 If you’d rather not create files, quick one-shot test (Command Prompt) is:
 ```
-set "OPENAI_API_KEY=sk-YOUR_FULL_KEY" & C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+set "OPENAI_API_KEY=sk-YOUR_FULL_KEY" & C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe -u C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 Your call — but the wrapper file is the easiest day to day.
@@ -51046,7 +51046,7 @@ Write-Host "OPENAI_API_KEY present: $has  len: $len"
 & $Python -c "import os;print('PY_OK' if os.getenv('OPENAI_API_KEY') else 'PY_MISSING')"
 
 Write-Host "Ready. Run:" -ForegroundColor Green
-Write-Host "  `"$Python`" -u `"$ProjectDir\dev_live_scan_cv.py`" --ip 10.0.0.187 --port 4747 --country CA --store Walmart"
+Write-Host "  `"$Python`" -u `"$ProjectDir\dev_live_scan_cv.py`" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart"
 ```
 
 > ⚠️ Don’t commit this file with your real key. If you use Git, add it to `.gitignore`.
@@ -51080,7 +51080,7 @@ In the Explorer, create a folder **`.vscode`**, then add:
       "args": [
         "-u",
         "${workspaceFolder}\\dev_live_scan_cv.py",
-        "--ip", "10.0.0.187",
+        "--ip", "[REDACTED:PHONE 10••••87]",
         "--port", "4747",
         "--country", "CA",
         "--store", "Walmart"
@@ -51105,7 +51105,7 @@ Optional (nice for F5 debugging):
       "program": "${workspaceFolder}\\dev_live_scan_cv.py",
       "console": "integratedTerminal",
       "python": "${workspaceFolder}\\.venv312\\Scripts\\python.exe",
-      "args": ["--ip","10.0.0.187","--port","4747","--country","CA","--store","Walmart"],
+      "args": ["--ip","[REDACTED:PHONE 10••••87]","--port","4747","--country","CA","--store","Walmart"],
       "preLaunchTask": "Activate Dev (PS, sets key)",
       "justMyCode": true
     }
@@ -51124,7 +51124,7 @@ First run will print:
 ```
 OPENAI_API_KEY present: True  len: <big number>
 PY_OK
-Ready. Run: "<...python.exe>" -u "<...dev_live_scan_cv.py>" --ip 10.0.0.187 ...
+Ready. Run: "<...python.exe>" -u "<...dev_live_scan_cv.py>" --ip [REDACTED:PHONE 10••••87] ...
 ```
 Then you’ll see the `[DEV]` logs and the live OpenCV window.
 
@@ -51135,7 +51135,7 @@ Open VS Code Terminal (PowerShell) and run:
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass -Force
 .\Activate-Dev.ps1
-.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ---
@@ -51150,7 +51150,7 @@ returned: (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> .\Act
 OPENAI_API_KEY present: True  len: 164
 PY_OK
 Ready. Run:
-  "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+  "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> 
 
 
@@ -51161,20 +51161,20 @@ Perfect — your key is loaded ✅
 Copy–paste this **exact** command in the same VS Code terminal:
 
 ```powershell
-"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 You should see `[DEV]` logs, a live camera window, and the side “Found Items” window. On the first lock it’ll also open `captures\results.html` in your browser.
 
 ### If anything looks off
-- Make sure the **DroidCam app** is open on your phone and the feed works at `http://10.0.0.187:4747/video`.
+- Make sure the **DroidCam app** is open on your phone and the feed works at `http://[REDACTED:PHONE 10••••87]:4747/video`.
 - Check the live log:  
   ```powershell
   Get-Content .\captures\run.log -Tail 50
   ```
 - To run from VS Code with one click: `Ctrl+Shift+P` → **Tasks: Run Task** → **Start Dev Scanner** (from the tasks we set up).
 
-this returned : (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+this returned : (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 At line:1 char:81
 + ... ive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Use ...
 +                                                                ~~
@@ -51204,12 +51204,12 @@ Paste **one** of these (you’re already in the project folder):
 
 **Option A (relative paths — easiest)**
 ```powershell
-& .\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 **Option B (absolute paths)**
 ```powershell
-& "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If you prefer not to think about syntax at all, you can also run the VS Code task we created:
@@ -51356,7 +51356,7 @@ okay new day and i want to test the camera scanning function again how do i star
 Nice—let’s fire it up again. Here’s the quickest, fool-proof way in VS Code.
 
 ## 1) Prep (phone + VS Code)
-- Open the **DroidCam** app on your phone and note the IP/port (e.g. `10.0.0.187:4747`).
+- Open the **DroidCam** app on your phone and note the IP/port (e.g. `[REDACTED:PHONE 10••••87]:4747`).
 - In VS Code, open the folder:  
   `C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch`
 
@@ -51376,7 +51376,7 @@ Ready. Run: ...
 ## 3) Start the live scanner
 ### Option A — one command (edit IP if needed)
 ```powershell
-& .\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ### Option B — use the VS Code task
@@ -51470,11 +51470,11 @@ Want me to post the full file now so you can copy/paste it?
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[DEV] LOCK: UPC:4079177707407  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
-[DEV] Lookup thread started for UPC:4079177707407
+[DEV] LOCK: UPC:[REDACTED:PHONE 40•••••••••07]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 40•••••••••07]
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-[DEV] LOCK: UPC:059124707401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
-[DEV] LOCK: UPC:059724101401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982946.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982945.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754982946.jpg
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 [DEV] identify_product error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-XXXX. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
@@ -51496,36 +51496,36 @@ Want me to post the full file now so you can copy/paste it?
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 164
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
 [DEV] Windows created. Entering main loop.
-[DEV] LOCK: UPC:048500022269  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985891.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 04••••••••69]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985891.jpg
 [DEV] Opened results page: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\results.html
-[DEV] Lookup thread started for UPC:048500022269
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 04••••••••69]
 [DEV] Proof composed: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\proof_1754985901.png
-[DEV] LOCK: UPC:059124707401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985962.jpg
-[DEV] Lookup thread started for UPC:059124707401
-[DEV] LOCK: UPC:059724101401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985963.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985962.jpg
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 05••••••••01]
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985963.jpg
 [DEV] Proof composed: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\proof_1754985969.png
-[DEV] LOCK: UPC:059124101407  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985976.jpg
-[DEV] Lookup thread started for UPC:059124101407
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••07]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754985976.jpg
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 05••••••••07]
 [DEV] Proof composed: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\proof_1754985983.png
 [DEV] === dev_live_scan_cv.py starting ===
 [DEV] Importing app modules...
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 164
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
 [DEV] Windows created. Entering main loop.
-[DEV] LOCK: UPC:9078184101401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754987007.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 90•••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754987007.jpg
 [DEV] Opened results page: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\results.html
-[DEV] Lookup thread started for UPC:9078184101401
-[DEV] LOCK: UPC:059724101401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754987008.jpg
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 90•••••••••01]
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1754987008.jpg
 [DEV] Proof composed: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\proof_1754987017.png
 [DEV] Shutting downâ€¦
 [DEV] === dev_live_scan_cv.py starting ===
@@ -51533,18 +51533,18 @@ Want me to post the full file now so you can copy/paste it?
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 164
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
 [DEV] Windows created. Entering main loop.
-[DEV] LOCK: UPC:048500022269  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755024935.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 04••••••••69]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755024935.jpg
 [DEV] Opened results page: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\results.html
-[DEV] Lookup thread started for UPC:048500022269
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 04••••••••69]
 [DEV] Proof composed: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\proof_1755024946.png
-[DEV] LOCK: UPC:059724101401  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755024947.jpg
-[DEV] Lookup thread started for UPC:059724101401
-[DEV] LOCK: UPC:059124101407  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755024948.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••01]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755024947.jpg
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 05••••••••01]
+[DEV] LOCK: UPC:[REDACTED:PHONE 05••••••••07]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755024948.jpg
 [DEV] Proof composed: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\proof_1755024955.png
 [DEV] Shutting downâ€¦
 [DEV] === dev_live_scan_cv.py starting ===
@@ -51552,14 +51552,14 @@ Want me to post the full file now so you can copy/paste it?
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 164
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 [DEV] Stream opened. Reading first frame...
 [DEV] First frame: OK shape: (480, 640, 3)
 [DEV] Vision worker started. Country: CA
 [DEV] Windows created. Entering main loop.
-[DEV] LOCK: UPC:063211284096  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755026300.jpg
+[DEV] LOCK: UPC:[REDACTED:PHONE 06••••••••96]  ->  C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\capture_1755026300.jpg
 [DEV] Opened results page: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\results.html
-[DEV] Lookup thread started for UPC:063211284096
+[DEV] Lookup thread started for UPC:[REDACTED:PHONE 06••••••••96]
 [DEV] Proof composed: C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\captures\proof_1755026310.png
 
 
@@ -51643,7 +51643,7 @@ You should **no longer** see `invalid_api_key`. Instead you’ll see a “VISION
 ### D. Re-start the scanner (quick reminder)
 ```powershell
 .\Activate-Dev.ps1
-& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ---
@@ -51743,7 +51743,7 @@ You should now see `confidence` come through as ~0.9 instead of 0.0, and the res
 ### Then run the live scanner again
 ```powershell
 .\Activate-Dev.ps1
-& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 Tip: keep an eye on the log while you scan:
@@ -52012,7 +52012,7 @@ then run the live scanner again:
 
 ```powershell
 .\Activate-Dev.ps1
-& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 if you want, i can also tweak the **results.html** generator so it immediately shows `brand – name` and a green tick when `confidence >= 0.85`.
@@ -52329,7 +52329,7 @@ $img
 ## 5) Run the live scanner again
 ```powershell
 .\Activate-Dev.ps1
-& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 Keep a tail open to watch updates live:
@@ -52433,7 +52433,7 @@ Boom — you nailed it. The normalization fix is live:
 1) Start your dev scanner (same as yesterday):
 ```powershell
 .\Activate-Dev.ps1
-& "$env:PROJECT_DIR\.venv312\Scripts\python.exe" -u "$env:PROJECT_DIR\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& "$env:PROJECT_DIR\.venv312\Scripts\python.exe" -u "$env:PROJECT_DIR\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 2) Keep results open:
@@ -52495,7 +52495,7 @@ You should see “PY_OK” and a “Ready. Run:” line.
 
 2. Start the camera scanner  
 ```powershell
-& "$PWD\.venv312\Scripts\python.exe" -u "$PWD\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& "$PWD\.venv312\Scripts\python.exe" -u "$PWD\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 This opens the OpenCV video window and starts scanning.
 
@@ -52564,7 +52564,7 @@ Scan away. If anything doesn’t show up on the page, check the tailing log—er
 Yep — you run them one-by-one. Here’s the clean “morning reboot” flow with exactly what to type and what each thing does.
 
 # 0) Start DroidCam
-Open the DroidCam app on your phone, start the server, and note the IP/port (you’ve been using `10.0.0.187:4747`). Keep the phone camera running.
+Open the DroidCam app on your phone, start the server, and note the IP/port (you’ve been using `[REDACTED:PHONE 10••••87]:4747`). Keep the phone camera running.
 
 # 1) Activate the env + key (PowerShell in VS Code)
 This sets your venv and OpenAI key for the current terminal session.
@@ -52575,7 +52575,7 @@ You should see something like:
 ```
 OPENAI_API_KEY present: True  len: 164
 PY_OK
-Ready. Run: "<path>\python.exe" -u "<path>\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+Ready. Run: "<path>\python.exe" -u "<path>\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 # 2) (Optional) Open the results page (same terminal)
@@ -52593,7 +52593,7 @@ Get-Content .\captures\run.log -Tail 200 -Wait
 # 4) Start the live scanner in your **first** terminal
 This is the main app.
 ```powershell
-.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 **Controls in the scanner window**
@@ -52801,7 +52801,7 @@ Use your usual launcher (PowerShell example):
 
 ```powershell
 .\Activate-Dev.ps1
-"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 The scanner will:
@@ -52862,12 +52862,12 @@ You should see:
 OPENAI_API_KEY present: True  len: 164
 PY_OK
 Ready. Run:
-  "...\python.exe" -u "...\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+  "...\python.exe" -u "...\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 3) Start the scanner exactly as shown:
 ```powershell
-"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 4) Point the camera at a product:
@@ -52919,7 +52919,7 @@ Below is a clean, drop-in `dev_live_scan_cv.py` that:
 3) Save, then run:
 ```powershell
 .\Activate-Dev.ps1
-"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 ---
@@ -53474,7 +53474,7 @@ if __name__ == "__main__":
 
 If anything throws an error during paste/run, shoot me a screenshot of the exact traceback (or the file you pasted), and I’ll hand you a corrected full-file replacement in the same copy-paste format.
 
->> "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+>> "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 >> 
 At line:2 char:81
 + ... ive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u 
@@ -53518,17 +53518,17 @@ Do this:
 
 3) Run the scanner (PowerShell, one line, note the leading `&`):
 ```powershell
-& "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 Shortcut (after step 2 you can just use `python`):
 ```powershell
-python -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+python -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 If you prefer **Command Prompt** (cmd.exe), this works without the `&`:
 ```cmd
-"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+"C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\.venv312\Scripts\python.exe" -u "C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 You should see:
@@ -53592,7 +53592,7 @@ Replace the whole `if make_proof_png:` try/except section with this version (cop
 
 6) **Run the scanner again** (PowerShell):
 ```powershell
-& .\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe -u .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 # What to expect
@@ -53663,7 +53663,7 @@ except Exception as e:
 - Stop the scanner if it’s running (click the console and press **Ctrl+C** once).  
 - Start it again the same way you’ve been doing:
 ```
-& ".\.venv312\Scripts\python.exe" -u ".\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& ".\.venv312\Scripts\python.exe" -u ".\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 - Watch the terminal. After a scan locks, you should now see a line like:
 ```
@@ -56063,7 +56063,7 @@ Replace your current `dev_live_scan_cv.py` with the contents of that text file. 
 # How to run (same as before)
 In PowerShell from your project folder:
 ```
-& ".\.venv312\Scripts\python.exe" -u ".\dev_live_scan_cv.py" --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& ".\.venv312\Scripts\python.exe" -u ".\dev_live_scan_cv.py" --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 # Tweak if needed
@@ -56660,7 +56660,7 @@ Great idea—let’s stop it from re-capturing the same thing over and over. I�
 
 # Run exactly like before
 ```powershell
-& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 # What changed (in plain English)
@@ -56685,23 +56685,23 @@ DARK_THRESH = 22.0
 
 Want me to lower/raise any of those by default? Happy to regen the file with your preferred numbers.
 
-(.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> & .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart       
+(.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> & .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart       
 >>
 [DEV] INFO: walmart adapter unavailable: cannot import name 'walmart_adapter' from 'providers' (C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\providers\__init__.py)
 [DEV] INFO: flipp adapter unavailable: cannot import name 'flipp_adapter' from 'providers' (C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\providers\__init__.py)
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 164
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> ^C
-(.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> & .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart       
+(.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> & .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart       
 >>
 [DEV] INFO: walmart adapter unavailable: cannot import name 'walmart_adapter' from 'providers' (C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\providers\__init__.py)
 [DEV] INFO: flipp adapter unavailable: cannot import name 'flipp_adapter' from 'providers' (C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch\providers\__init__.py)
 [DEV] Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
 [DEV] cv2.__version__: 4.12.0
 [DEV] OPENAI_API_KEY present: True len: 164
-[DEV] Opening DroidCam stream: http://10.0.0.187:4747/video
+[DEV] Opening DroidCam stream: http://[REDACTED:PHONE 10••••87]:4747/video
 (.venv312) PS C:\Users\dmlac\OneDrive\Desktop\InstantPriceMatch> 
 
 
@@ -56713,25 +56713,25 @@ Thanks—your command is fine. The reason it “prints Opening DroidCam stream�
 Do these, in order (copy/paste the commands):
 
 1) Confirm the phone’s IP/port  
-Open the DroidCam app on your phone and note the **Wi-Fi IP** and **Port**. If they’re not `10.0.0.187:4747`, rerun with the new values:
+Open the DroidCam app on your phone and note the **Wi-Fi IP** and **Port**. If they’re not `[REDACTED:PHONE 10••••87]:4747`, rerun with the new values:
 ```powershell
 & .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip <NEW_IP> --port <NEW_PORT> --country CA --store Walmart
 ```
 
 2) Quick browser test (should show the video)
 ```powershell
-start http://10.0.0.187:4747/video
+start http://[REDACTED:PHONE 10••••87]:4747/video
 ```
 If that page doesn’t load video: make sure phone & PC are on the same Wi-Fi, VPN is off, and Windows Firewall isn’t blocking (allow DroidCam).
 
 3) Ping test (should reply)
 ```powershell
-ping 10.0.0.187
+ping [REDACTED:PHONE 10••••87]
 ```
 
 4) OpenCV one-liner (tells us if Python can read a frame)
 ```powershell
-& .\.venv312\Scripts\python.exe -c "import cv2; u='http://10.0.0.187:4747/video'; c=cv2.VideoCapture(u); print('opened=',c.isOpened()); ok,frm=c.read(); print('read_ok=',ok,'shape=',None if frm is None else frm.shape); c.release()"
+& .\.venv312\Scripts\python.exe -c "import cv2; u='http://[REDACTED:PHONE 10••••87]:4747/video'; c=cv2.VideoCapture(u); print('opened=',c.isOpened()); ok,frm=c.read(); print('read_ok=',ok,'shape=',None if frm is None else frm.shape); c.release()"
 ```
 Expected: `opened= True` and `read_ok= True shape= (something like (480, 640, 3))`.
 
@@ -56754,7 +56754,7 @@ Yes—that means the camera path is good and OpenCV can read frames. 👍
 
 Run the scanner again (this is the exact command):
 ```powershell
-& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 You should see these lines:
@@ -56766,7 +56766,7 @@ You should see these lines:
 …and two windows will open (“InstantPriceMatch – DEV” and “Found Items”). Press `Esc` to quit, `r` to rotate.
 
 If it still drops back to the prompt:
-- Close any browser tab that’s on `http://10.0.0.187:4747/video` (it can lock the stream).
+- Close any browser tab that’s on `http://[REDACTED:PHONE 10••••87]:4747/video` (it can lock the stream).
 - Restart the DroidCam app on your phone.
 - Tail logs to watch what’s happening live:
   ```powershell
@@ -56800,7 +56800,7 @@ You should see: `OPENAI_API_KEY present: True len: 164` and `PY_OK`.
 
 ### B) Verify the phone stream is really reachable
 1. Open DroidCam on your phone (Wi-Fi mode), keep the app **on screen**.
-2. Note the IP and Port shown in the app (they often change; don’t assume 10.0.0.187 / 4747).
+2. Note the IP and Port shown in the app (they often change; don’t assume [REDACTED:PHONE 10••••87] / 4747).
 3. From your PC, test the URL in a browser:
    ```
    http://<the-ip-from-phone>:<port>/video
@@ -56836,13 +56836,13 @@ If you want, I can give you two tiny helper scripts so you don’t have to remem
 Say the word and I’ll paste both, ready to save.
 
 [object Object]
-and so you know my wifi ip is 10.0.0.187 port 4747 please help me fix this 
+and so you know my wifi ip is [REDACTED:PHONE 10••••87] port 4747 please help me fix this 
 
 
 
 # Create two helper PowerShell scripts for the user.
 start_scan = r'''param(
-    [string]$ip   = "10.0.0.187",
+    [string]$ip   = "[REDACTED:PHONE 10••••87]",
     [int]   $port = 4747,
     [string]$country = "CA",
     [string]$store   = "Walmart"
@@ -56892,7 +56892,7 @@ Write-Host "Running: $cmd" -ForegroundColor Green
 '''
 
 test_cam = r'''param(
-    [string]$ip = "10.0.0.187",
+    [string]$ip = "[REDACTED:PHONE 10••••87]",
     [int]$port = 4747
 )
 Write-Host "== Test-Cam ==" -ForegroundColor Cyan
@@ -56941,7 +56941,7 @@ I made you two tiny PowerShell helpers you can download and use right away:
 2) In VS Code Terminal at the project root:
    - Run a connectivity check first:
      ```
-     .\Test-Cam.ps1 -ip 10.0.0.187 -port 4747
+     .\Test-Cam.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747
      ```
      You want `TCP Port Open: True`. If it’s False:
      - Open the DroidCam app on the phone and keep it in the foreground.
@@ -56950,7 +56950,7 @@ I made you two tiny PowerShell helpers you can download and use right away:
      - If Windows Firewall prompts for `python.exe`, allow **Private network**.
    - If the test looks good, start the scanner:
      ```
-     .\Start-Scan.ps1 -ip 10.0.0.187 -port 4747
+     .\Start-Scan.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747
      ```
      You should then see:
      ```
@@ -56961,7 +56961,7 @@ I made you two tiny PowerShell helpers you can download and use right away:
      ```
 
 ### Why your last run stopped at “Opening DroidCam stream”
-That line appears right before the code tries to open the MJPEG stream at `http://10.0.0.187:4747/video`. If the phone app isn’t serving video (app not open, wrong IP/port, different Wi-Fi, firewall blocks), the open fails and the script exits early without more logs. The helper scripts above catch that situation and tell you what to fix.
+That line appears right before the code tries to open the MJPEG stream at `http://[REDACTED:PHONE 10••••87]:4747/video`. If the phone app isn’t serving video (app not open, wrong IP/port, different Wi-Fi, firewall blocks), the open fails and the script exits early without more logs. The helper scripts above catch that situation and tell you what to fix.
 
 If you still get stuck after running `Test-Cam.ps1`:
 - Paste the output of that script here, and I’ll pinpoint the exact step to fix.
@@ -56975,7 +56975,7 @@ says file not found
 # Create two PowerShell helper scripts and save to /mnt/data so the user can download them.
 start_scan = r"""[CmdletBinding()]
 param(
-  [string]$ip = "10.0.0.187",
+  [string]$ip = "[REDACTED:PHONE 10••••87]",
   [int]$port = 4747,
   [string]$country = "CA",
   [string]$store = "Walmart"
@@ -57040,7 +57040,7 @@ Write-Host "Starting scanner..."
 
 test_cam = r"""[CmdletBinding()]
 param(
-  [string]$ip = "10.0.0.187",
+  [string]$ip = "[REDACTED:PHONE 10••••87]",
   [int]$port = 4747
 )
 
@@ -57097,7 +57097,7 @@ print("/mnt/data/Test-Cam.ps1")
 # Retry writing the two PowerShell helper scripts.
 start_scan = """[CmdletBinding()]
 param(
-  [string]$ip = "10.0.0.187",
+  [string]$ip = "[REDACTED:PHONE 10••••87]",
   [int]$port = 4747,
   [string]$country = "CA",
   [string]$store = "Walmart"
@@ -57158,7 +57158,7 @@ Write-Host "Starting scanner..."
 
 test_cam = """[CmdletBinding()]
 param(
-  [string]$ip = "10.0.0.187",
+  [string]$ip = "[REDACTED:PHONE 10••••87]",
   [int]$port = 4747
 )
 
@@ -57226,13 +57226,13 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 3) **Quick camera check** (makes sure DroidCam is reachable):
 ```powershell
-.\Test-Cam.ps1 -ip 10.0.0.187 -port 4747
+.\Test-Cam.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747
 ```
 You want ✅ for Ping, TCP and HTTP. If something fails, the script prints specific tips.
 
 4) **Start the scanner** (auto-activates venv, checks the stream, then runs your app):
 ```powershell
-.\Start-Scan.ps1 -ip 10.0.0.187 -port 4747 -country CA -store Walmart
+.\Start-Scan.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747 -country CA -store Walmart
 ```
 
 Notes:
@@ -57247,7 +57247,7 @@ cant download these files?
 # Create the two PowerShell helper scripts in /mnt/data
 
 start_scan = r'''param(
-    [string]$ip = "10.0.0.187",
+    [string]$ip = "[REDACTED:PHONE 10••••87]",
     [int]$port = 4747,
     [string]$country = "CA",
     [string]$store = "Walmart"
@@ -57301,7 +57301,7 @@ Write-Host "Starting dev_live_scan_cv.py ..." -ForegroundColor Yellow
 '''
 
 test_cam = r'''param(
-    [string]$ip = "10.0.0.187",
+    [string]$ip = "[REDACTED:PHONE 10••••87]",
     [int]$port = 4747
 )
 
@@ -57378,7 +57378,7 @@ Got you—sorry about the dead links. I’ve generated both helper scripts for y
 
 Run it from your project folder:
 ```powershell
-.\Start-Scan.ps1 -ip 10.0.0.187 -port 4747 -country CA -store Walmart
+.\Start-Scan.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747 -country CA -store Walmart
 ```
 
 **Test-Cam.ps1**
@@ -57389,7 +57389,7 @@ Run it from your project folder:
 
 Run it like:
 ```powershell
-.\Test-Cam.ps1 -ip 10.0.0.187 -port 4747
+.\Test-Cam.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747
 ```
 
 If you want these scripts saved right into your repo, drop both files into:
@@ -57406,7 +57406,7 @@ please give me the files in a .txt doc
 # Create two .txt files with PowerShell helper scripts
 start_scan = r"""
 param(
-    [string]$ip = "10.0.0.187",
+    [string]$ip = "[REDACTED:PHONE 10••••87]",
     [int]$port = 4747,
     [string]$country = "CA",
     [string]$store = "Walmart"
@@ -57535,12 +57535,12 @@ How to use:
 ```
 Or override:
 ```powershell
-.\Start-Scan.ps1 -ip 10.0.0.187 -port 4747 -country CA -store Walmart
+.\Start-Scan.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747 -country CA -store Walmart
 ```
 
 - Quick camera check:
 ```powershell
-.\Test-Cam.ps1 -ip 10.0.0.187 -port 4747
+.\Test-Cam.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747
 ```
 
 What they do:
@@ -57567,7 +57567,7 @@ nothing is working now...
 
 start_scan = r"""[CmdletBinding()]
 param(
-  [string]$ip = "10.0.0.187",
+  [string]$ip = "[REDACTED:PHONE 10••••87]",
   [int]$port = 4747,
   [string]$country = "CA",
   [string]$store = "Walmart"
@@ -57703,12 +57703,12 @@ Your `dev_live_scan_cv.py` is attempting to import adapters from `providers.*`, 
 
 Open `dev_live_scan_cv.py` and **replace** the whole optional adapter import block with the contents of `dev_live_scan_cv_import_patch.txt`. (Search for the block that talks about “adapters (optional)” and paste the snippet over it.)
 
-# 3) Start the scanner the easy way (with your IP `10.0.0.187`, port `4747`)
+# 3) Start the scanner the easy way (with your IP `[REDACTED:PHONE 10••••87]`, port `4747`)
 In VS Code, open a **fresh** PowerShell terminal (trash-can the old one first):
 
 ```powershell
 # In the project root
-.\Start-Scan.ps1 -ip 10.0.0.187 -port 4747 -country CA -store Walmart
+.\Start-Scan.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747 -country CA -store Walmart
 ```
 
 What to expect:
@@ -57719,19 +57719,19 @@ What to expect:
 # 4) Common gotchas I saw in your screenshots
 - **Don’t type angle brackets literally.**  
   Commands like `--ip <ip>` are *documentation placeholders*. Use real values:  
-  `--ip 10.0.0.187 --port 4747`
+  `--ip [REDACTED:PHONE 10••••87] --port 4747`
 - **“Variable reference is not valid ‘:’ …” in Test-Cam.ps1**  
   Fixed: the script now uses `"http://$($ip):$port/video"`.
 - **`OPENAI_API_KEY present: False`**  
   Means the key isn’t in the current shell. With `Start-Scan.ps1`, you’ll be prompted if it’s missing. If you want it persistent, you can put it in `openai_key.txt` (single line, no quotes) in the project root.
 - **PowerShell Extension terminal restarting**  
-  If it flakes out, close the integrated terminal (trash icon), open a new one, and re-run the single `.\Start-Scan.ps1 -ip 10.0.0.187 -port 4747 -country CA -store Walmart` command.
+  If it flakes out, close the integrated terminal (trash icon), open a new one, and re-run the single `.\Start-Scan.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747 -country CA -store Walmart` command.
 
 # 5) If the camera still won’t connect
 Run the probe directly to get a clear diagnosis:
 
 ```powershell
-.\Test-Cam.ps1 -ip 10.0.0.187 -port 4747
+.\Test-Cam.ps1 -ip [REDACTED:PHONE 10••••87] -port 4747
 ```
 
 - If **Ping fails**: phone not reachable (Wi-Fi off, different network, or AP isolation).
@@ -57757,7 +57757,7 @@ code = r'''# dev_live_scan_cv.py  — full rewrite with adapter fixes + duplicat
 # - Logs debug prints to console and captures/run.log
 #
 # Usage (example):
-#   python -u dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+#   python -u dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 #
 # Notes:
 # - This file is self-contained, with optional adapters guarded by try/except.
@@ -58377,7 +58377,7 @@ How to use it:
 4) Replace its contents with what you copied, save.
 5) Run it like you’ve been doing:
 ```
-.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --store Walmart
+.\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --store Walmart
 ```
 
 What changed (high-level):
@@ -59065,7 +59065,7 @@ safe_text = dedent(r"""
 #
 # Save as dev_live_scan_cv.py (overwrite). Run with:
 #   $env:PYTHONFAULTHANDLER=1
-#   .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --safe
+#   .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --safe
 
 import os, sys, time, threading, webbrowser, traceback, tempfile
 from datetime import datetime, timezone
@@ -59277,7 +59277,7 @@ Open your VS Code terminal at the project root and run:
 
 ```powershell
 $env:PYTHONFAULTHANDLER = 1
-& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip 10.0.0.187 --port 4747 --country CA --safe
+& .\.venv312\Scripts\python.exe .\dev_live_scan_cv.py --ip [REDACTED:PHONE 10••••87] --port 4747 --country CA --safe
 ```
 
 What this build does:

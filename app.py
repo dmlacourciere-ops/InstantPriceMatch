@@ -1,111 +1,87 @@
-import argparse
-import json
-import os
-import sys
-from typing import Any, Dict, List, Optional
+# app.py — unified CLI for Instant Price Match
+# Usage:
+#   python app.py --upc 0064100136908 --country CA
+# Prints one JSON object: {input, offers, cheapest, proof_path, errors}
 
-# Ensure project root and providers/ are importable
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROVIDERS_DIR = os.path.join(BASE_DIR, "providers")
-for p in (BASE_DIR, PROVIDERS_DIR):
-    if p not in sys.path:
-        sys.path.insert(0, p)
+import argparse, json, time
+from pathlib import Path
+from typing import Dict, Any, List, Optional
 
-from tools.vision_identify import identify_product
-try:
-    from tools import walmart_adapter as WAL
-except Exception:
-    WAL = None  # type: ignore
+# Provider (Walmart — CA-focused right now)
+from providers.walmart_playwright import get_offers_by_upc
 
-# DEV CAMERA (DroidCam)
-try:
-    from tools.droidcam import grab_frame as droidcam_grab_frame
-except Exception:
-    droidcam_grab_frame = None  # type: ignore
+from PIL import Image, ImageDraw, ImageFont
 
-def _best_string(*parts: Optional[str]) -> str:
-    return " ".join([p.strip() for p in parts if isinstance(p, str) and p.strip()])
+def make_proof(offer: Dict[str, Any], upc: str, country: str) -> str:
+    """Create a simple PNG proof and return the saved file path."""
+    ts = time.strftime("%Y-%m-%d %H:%M:%S")
+    ymd = time.strftime("%Y-%m-%d")
+    out_dir = Path("proofs") / ymd
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"{upc}.png"
 
-def _collect_walmart(upc: Optional[str], name_guess: Optional[str]) -> List[Dict[str, Any]]:
-    if WAL is None:
-        return []
+    img = Image.new("RGB", (1000, 600), color=(18, 18, 18))
+    draw = ImageDraw.Draw(img)
     try:
-        return WAL.lookup_by_upc_or_name(upc=upc, name=name_guess)
+        font_big = ImageFont.truetype("arial.ttf", 40)
+        font = ImageFont.truetype("arial.ttf", 28)
+        font_small = ImageFont.truetype("arial.ttf", 22)
     except Exception:
-        return []
+        font_big = font = font_small = ImageFont.load_default()
 
-def _as_price(v: Any) -> float:
-    try:
-        return float(v)
-    except Exception:
-        return float("inf")
+    draw.text((40, 40), "Instant Price Match — Proof", fill=(255, 255, 255), font=font_big)
+    draw.text((40, 100), f"Store: {offer.get('store','?')}  Country: {country}", fill=(220, 220, 220), font=font)
+    draw.text((40, 140), f"Product: {offer.get('title','(unknown)')}", fill=(220, 220, 220), font=font)
+    draw.text((40, 180), f"UPC: {upc}", fill=(220, 220, 220), font=font)
+    price_line = f"Price: {offer.get('currency','')} {offer.get('price','?')}"
+    draw.text((40, 220), price_line, fill=(255, 220, 160), font=font)
+    draw.text((40, 260), f"URL: {offer.get('url','')}", fill=(150, 200, 255), font=font_small)
+    draw.text((40, 320), f"Generated: {ts}", fill=(180, 180, 180), font=font_small)
 
-def _summarize_offers(offers: List[Dict[str, Any]]) -> Dict[str, Any]:
-    offers_sorted = sorted(offers, key=lambda x: _as_price(x.get("price")))
-    cheapest = offers_sorted[0] if offers_sorted else None
-    return {"count": len(offers_sorted), "cheapest": cheapest, "offers": offers_sorted}
+    img.save(out_path)
+    return str(out_path)
 
-def run(image: Optional[str], upc: Optional[str], name: Optional[str], country: str,
-        droidcam_ip: Optional[str], droidcam_port: int) -> Dict[str, Any]:
-    # DEV: if DroidCam IP provided and no image, capture one frame now
-    temp_image = None
-    if not image and droidcam_ip:
-        if droidcam_grab_frame is None:
-            raise RuntimeError("DroidCam helper missing. Did you create tools/droidcam.py?")
-        temp_image = droidcam_grab_frame(droidcam_ip, droidcam_port)
-        image = temp_image
+def pick_cheapest(offers: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    best = None
+    for o in offers:
+        try:
+            price = float(o.get("price"))
+        except Exception:
+            continue
+        if best is None or price < float(best.get("price", 9e9)):
+            best = o
+    return best
 
-    vision = None
-    if image:
-        vision = identify_product(image=image, country_hint=country)
-        if not upc:
-            upc = (vision or {}).get("possible_upc") or None
-        if not name:
-            name = _best_string(
-                (vision or {}).get("brand"),
-                (vision or {}).get("name"),
-                (vision or {}).get("variant"),
-                (vision or {}).get("size_text"),
-            ) or None
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--upc", type=str, required=True)
+    ap.add_argument("--country", type=str, default="CA", choices=["CA", "US"])
+    args = ap.parse_args()
 
-    walmart_offers = _collect_walmart(upc, name)
-    summary = _summarize_offers(walmart_offers)
-
-    out = {
-        "input": {"image": image, "upc": upc, "name": name, "country": country, "dev_camera": bool(droidcam_ip)},
-        "vision": vision,
-        "walmart": summary,
+    result = {
+        "input": {"upc": args.upc, "country": args.country},
+        "offers": [],
+        "cheapest": None,
+        "proof_path": None,
+        "errors": []
     }
 
-    # (Optional) cleanup temp image
-    # if temp_image:
-    #     try: os.remove(temp_image)
-    #     except Exception: pass
+    try:
+        offers = get_offers_by_upc(args.upc, args.country) or []
+        result["offers"] = offers
+    except Exception as e:
+        result["errors"].append(f"Walmart error: {e!r}")
 
-    return out
+    cheapest = pick_cheapest(result["offers"])
+    result["cheapest"] = cheapest
+
+    if cheapest:
+        try:
+            result["proof_path"] = make_proof(cheapest, args.upc, args.country)
+        except Exception as e:
+            result["errors"].append(f"Proof error: {e!r}")
+
+    print(json.dumps(result, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Instant Price Match — Vision-first lookup (with optional DroidCam for dev)")
-    parser.add_argument("--image", default=None, help="Path to an image file (prod flow)")
-    parser.add_argument("--upc", default=None)
-    parser.add_argument("--name", default=None)
-    parser.add_argument("--country", default="CA")
-    parser.add_argument("--droidcam-ip", default=None, help="DEV ONLY: phone IP for DroidCam (e.g., 192.168.1.23)")
-    parser.add_argument("--droidcam-port", type=int, default=4747, help="DEV ONLY: DroidCam port (default 4747)")
-    parser.add_argument("--out", default="last_result.json")
-    args = parser.parse_args()
-
-    result = run(
-        image=args.image,
-        upc=args.upc,
-        name=args.name,
-        country=args.country,
-        droidcam_ip=args.droidcam_ip,
-        droidcam_port=args.droidcam_port,
-    )
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    try:
-        with open(args.out, "w", encoding="utf-8") as f:
-            json.dump(result, f, ensure_ascii=False, indent=2)
-    except Exception:
-        pass
+    main()

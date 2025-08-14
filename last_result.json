@@ -1,9 +1,9 @@
 {
   "input": {
     "image": null,
-    "upc": null,
-    "name": "bic ballpoint pen",
-    "country": "US",
+    "upc": "064100136908",
+    "name": null,
+    "country": "CA",
     "dev_camera": false
   },
   "vision": null,
