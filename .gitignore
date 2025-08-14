@@ -17,3 +17,7 @@
 # Allow chat logs in repo
 !docs/chat-logs/
 !docs/chat-logs/*.txt
+
+# Allow chat logs in repo
+!docs/chat-logs/
+!docs/chat-logs/*.txt
