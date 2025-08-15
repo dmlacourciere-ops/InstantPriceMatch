@@ -32,3 +32,12 @@
 
 .env
 
+
+# Local temp scans & samples
+.tmp_scans/
+sample_photos/
+
+
+# Phone-camera temp files
+.tmp_scans/
+

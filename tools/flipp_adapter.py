@@ -1,53 +1,39 @@
-# tools/flipp_adapter.py
-import time, json, uuid, requests
-from typing import List, Dict
+import re
+from typing import Any
 
-def _locale(country: str) -> str:
-    return "en-ca" if str(country).upper() == "CA" else "en-us"
+def _norm(query: Any) -> str:
+    """
+    Coerce any query (str, dict, list/tuple) into a simple string.
+    - dict: join string-like values ("name", "product", "label", etc.)
+    - list/tuple: join items
+    - fallback: str(query)
+    Then collapse whitespace.
+    """
+    def _is_strish(x):
+        return isinstance(x, str) and x.strip() != ""
 
-def search_deals(query: str, postal: str, country: str = "CA", limit: int = 10) -> List[Dict]:
-    if not query or not postal:
-        return []
+    if isinstance(query, str):
+        text = query
+    elif isinstance(query, dict):
+        # collect common keys first, then add any other stringy values
+        keys = ["name", "product", "title", "label", "brand", "size", "variant"]
+        parts = []
+        for k in keys:
+            v = query.get(k)
+            if _is_strish(v):
+                parts.append(v.strip())
+        # include any other string values we didn't cover
+        for k, v in query.items():
+            if k in keys:
+                continue
+            if _is_strish(v):
+                parts.append(v.strip())
+        text = " ".join(parts) if parts else str(query)
+    elif isinstance(query, (list, tuple)):
+        parts = [str(x).strip() for x in query if str(x).strip()]
+        text = " ".join(parts)
+    else:
+        text = str(query)
 
-    base = "https://backflipp.wishabi.com/flipp/items/search"
-    params = {
-        "locale": _locale(country),
-        "postal_code": postal.replace(" ", ""),
-        "q": query,
-        "sid": str(uuid.uuid4()),
-    }
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) InstantPriceMatch/0.1",
-        "Accept": "application/json",
-    }
-
-    for _ in range(3):
-        try:
-            r = requests.get(base, params=params, headers=headers, timeout=15)
-            if r.status_code == 200:
-                data = r.json()
-                items = data.get("items") or data.get("results") or []
-                offers = []
-                for it in items:
-                    title = it.get("name") or it.get("title") or ""
-                    price = it.get("current_price") or it.get("price") or it.get("sale_price")
-                    merchant = it.get("merchant") or it.get("store") or {}
-                    store = merchant.get("name") if isinstance(merchant, dict) else (merchant or "")
-                    flyer_url = it.get("clipping_url") or it.get("share_url") or it.get("url") or ""
-                    try:
-                        price = float(price)
-                    except Exception:
-                        continue
-                    offers.append({
-                        "title": title,
-                        "price": price,
-                        "store": store,
-                        "flyer_url": flyer_url,
-                        "source": "Flipp",
-                    })
-                offers.sort(key=lambda d: d["price"])
-                return offers[:limit]
-        except requests.RequestException:
-            time.sleep(0.6)
-
-    return []
+    # collapse whitespace
+    return re.sub(r"\s+", " ", text).strip()
