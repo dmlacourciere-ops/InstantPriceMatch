@@ -1,1 +1,9 @@
-﻿{"python.defaultInterpreterPath": ".venv312\\Scripts\\python.exe"}
+{
+  "python.defaultInterpreterPath": ".venv312\\Scripts\\python.exe",
+  "python.analysis.aiCodeActions": {
+    "convertFormatString": true,
+    "generateDocstring": true,
+    "generateSymbol": true,
+    "implementAbstractClasses": true
+  }
+}
